@@ -17,4 +17,4 @@ if errorlevel 1 exit 1
 mkdir %LIBRARY_PREFIX%\include\spooles
 if errorlevel 1 exit 1
 
-find . -type f -name '*.h' -exec cp -p --parents {} %LIBRARY_PREFIX%\include\spooles ";"
+xcopy /s .\*.h %LIBRARY_PREFIX%\include\spooles

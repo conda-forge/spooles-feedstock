@@ -7,7 +7,7 @@ Package license: Public Domain
 
 Feedstock license: BSD 3-Clause
 
-Summary: Simple, fast, extensible JSON encoder/decoder for Python
+Summary: library for solving sparse real and complex linear systems of equations
 
 SPOOLES is a library for solving sparse real and complex linear systems of equations,
 written in the C language using object oriented design.
