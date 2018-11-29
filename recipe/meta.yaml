@@ -10,7 +10,7 @@ source:
   url: http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
   sha256: a84559a0e987a1e423055ef4fdf3035d55b65bbe4bf915efaa1a35bef7f8c5dd
   patches:
-    - gcc.patch  # [linux]
+    - gcc.patch  # [unix]
     - win.patch  # [win]
 
 build:
