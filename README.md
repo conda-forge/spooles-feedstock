@@ -18,7 +18,7 @@ Current build status
 
 [![Linux](https://img.shields.io/circleci/project/github/conda-forge/spooles-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/spooles-feedstock)
 [![OSX](https://img.shields.io/travis/conda-forge/spooles-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/spooles-feedstock)
-![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/spooles-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/spooles-feedstock/branch/master)
 
 Current release info
 ====================

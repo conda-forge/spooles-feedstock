@@ -10,15 +10,16 @@ source:
   url: http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
   sha256: a84559a0e987a1e423055ef4fdf3035d55b65bbe4bf915efaa1a35bef7f8c5dd
   patches:
-    - gcc.patch
+    - gcc.patch  # [linux]
+    - win.patch  # [win]
 
 build:
   number: 1000
-  skip: True  # [win]
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler('c') }}  # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
     - rsync  # [unix]
 
 test:
@@ -27,7 +28,7 @@ test:
 
 about:
   home: http://www.netlib.org/linalg/spooles/spooles.2.2.html
-  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'
+  summary: 'library for solving sparse real and complex linear systems of equations'
   license: Public Domain
   license_family: Public Domain
   description: |

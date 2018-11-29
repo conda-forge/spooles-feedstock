@@ -1,0 +1,3413 @@
+diff --git a/A2/makefile b/A2/makefile
+index d25e70a..1eb6b5f 100644
+--- a/A2/makefile
++++ b/A2/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/A2/src/copyEntriesToVector.c b/A2/src/copyEntriesToVector.c
+index eb51a8c..39dc5c0 100644
+--- a/A2/src/copyEntriesToVector.c
++++ b/A2/src/copyEntriesToVector.c
+@@ -122,7 +122,7 @@ if ( nent > length ) {
+ }
+ /*
+    --------------------------------------------
+-   make life simple, unit stride through dvec[]
++   mingw32-make life simple, unit stride through dvec[]
+    --------------------------------------------
+ */
+ kk = 0 ;
+diff --git a/A2/src/makefile b/A2/src/makefile
+index 04286bc..ec6ccd9 100644
+--- a/A2/src/makefile
++++ b/A2/src/makefile
+@@ -23,11 +23,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/BKL/makefile b/BKL/makefile
+index 398e457..54fd5d6 100644
+--- a/BKL/makefile
++++ b/BKL/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/BKL/src/exhSearch.c b/BKL/src/exhSearch.c
+index 314708d..6523e72 100644
+--- a/BKL/src/exhSearch.c
++++ b/BKL/src/exhSearch.c
+@@ -81,7 +81,7 @@ fflush(stdout) ;
+ #endif
+ /*
+    ---------------------------------
+-   count the number of flips to make
++   count the number of flips to mingw32-make
+    ---------------------------------
+ */
+ for ( idom = 0, nflip = 1 ; idom < mdom ; idom++ ) {
+diff --git a/BKL/src/fidmat.c b/BKL/src/fidmat.c
+index 4103ece..8c7cfe7 100644
+--- a/BKL/src/fidmat.c
++++ b/BKL/src/fidmat.c
+@@ -115,7 +115,7 @@ if ( ndom <= MAXNDOM_FOR_EXHAUSTIVE_SEARCH ) {
+ #endif
+ /*
+    --------------------------
+-   make the first fidmat pass
++   mingw32-make the first fidmat pass
+    --------------------------
+ */
+ #if MYDEBUG > 0
+@@ -134,7 +134,7 @@ if ( ndom <= MAXNDOM_FOR_EXHAUSTIVE_SEARCH ) {
+ #endif
+ /*
+    ---------------------------------------------------
+-   make additional passes while the partition improves
++   mingw32-make additional passes while the partition improves
+    ---------------------------------------------------
+ */
+    while ( 1 ) {
+@@ -167,7 +167,7 @@ return(cost) ; }
+ /*--------------------------------------------------------------------*/
+ /*
+    -------------------------------------
+-   make one pass of the FidMat algorithm
++   mingw32-make one pass of the FidMat algorithm
+ 
+    created -- 95oct11, cca
+    -------------------------------------
+@@ -238,7 +238,7 @@ for ( dom = 0 ; dom < ndom ; dom++ ) {
+ while ( head->next != head ) {
+ /*
+    -----------------------------------------------
+-   find best move to make w.r.t. the cost function
++   find best move to mingw32-make w.r.t. the cost function
+    -----------------------------------------------
+ */
+    cell = head->next ;
+diff --git a/BKL/src/makefile b/BKL/src/makefile
+index e7aa149..ddfa934 100644
+--- a/BKL/src/makefile
++++ b/BKL/src/makefile
+@@ -18,11 +18,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/BPG/makefile b/BPG/makefile
+index d25e70a..1eb6b5f 100644
+--- a/BPG/makefile
++++ b/BPG/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/BPG/src/makefile b/BPG/src/makefile
+index 4f7e5ec..472a983 100644
+--- a/BPG/src/makefile
++++ b/BPG/src/makefile
+@@ -20,11 +20,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Chv/makefile b/Chv/makefile
+index 2886da3..ba886a0 100644
+--- a/Chv/makefile
++++ b/Chv/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd drivers ; make clean
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd drivers ; mingw32-make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Chv/src/copy.c b/Chv/src/copy.c
+index 92b7a04..fde0e00 100644
+--- a/Chv/src/copy.c
++++ b/Chv/src/copy.c
+@@ -187,7 +187,7 @@ if ( nent > length ) {
+ }
+ /*
+    --------------------------------------------
+-   make life simple, unit stride through dvec[]
++   mingw32-make life simple, unit stride through dvec[]
+    --------------------------------------------
+ */
+ entries = Chv_entries(chv) ;
+@@ -1191,7 +1191,7 @@ nrow    = nD + nL      ;
+ ncol    = nD + nU      ;
+ /*
+    --------------------------------------------
+-   make life simple, unit stride through dvec[]
++   mingw32-make life simple, unit stride through dvec[]
+    --------------------------------------------
+ */
+ entries = Chv_entries(chv) ;
+diff --git a/Chv/src/makefile b/Chv/src/makefile
+index b9aa14b..02903ed 100644
+--- a/Chv/src/makefile
++++ b/Chv/src/makefile
+@@ -25,11 +25,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/ChvList/makefile b/ChvList/makefile
+index 398e457..54fd5d6 100644
+--- a/ChvList/makefile
++++ b/ChvList/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/ChvList/src/makefile b/ChvList/src/makefile
+index ccb99bf..698e629 100644
+--- a/ChvList/src/makefile
++++ b/ChvList/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/ChvManager/doc/intro.tex b/ChvManager/doc/intro.tex
+index 0de809a..7cfe1e4 100644
+--- a/ChvManager/doc/intro.tex
++++ b/ChvManager/doc/intro.tex
+@@ -10,7 +10,7 @@ parallel computation --- we may not know ahead of time just what
+ data structures will exist during the computations.
+ \par
+ We wanted to be able to generate and re-use {\tt Chv} objects,
+-and we wanted to make the process somewhat transparent to other
++and we wanted to mingw32-make the process somewhat transparent to other
+ sections of the code.
+ Towards this aim, there are two simple functions.
+ \begin{itemize}
+diff --git a/ChvManager/makefile b/ChvManager/makefile
+index 398e457..54fd5d6 100644
+--- a/ChvManager/makefile
++++ b/ChvManager/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/ChvManager/src/makefile b/ChvManager/src/makefile
+index c52b9fe..0f58def 100644
+--- a/ChvManager/src/makefile
++++ b/ChvManager/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Coords/makefile b/Coords/makefile
+index d25e70a..1eb6b5f 100644
+--- a/Coords/makefile
++++ b/Coords/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Coords/src/makefile b/Coords/src/makefile
+index fa8bbfe..bf73964 100644
+--- a/Coords/src/makefile
++++ b/Coords/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/DSTree/makefile b/DSTree/makefile
+index d25e70a..1eb6b5f 100644
+--- a/DSTree/makefile
++++ b/DSTree/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/DSTree/src/makefile b/DSTree/src/makefile
+index 64925c8..083b039 100644
+--- a/DSTree/src/makefile
++++ b/DSTree/src/makefile
+@@ -19,11 +19,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/DV/makefile b/DV/makefile
+index 2886da3..ba886a0 100644
+--- a/DV/makefile
++++ b/DV/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd drivers ; make clean
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd drivers ; mingw32-make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/DV/src/makefile b/DV/src/makefile
+index c047b68..556125b 100644
+--- a/DV/src/makefile
++++ b/DV/src/makefile
+@@ -19,11 +19,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/DenseMtx/makefile b/DenseMtx/makefile
+index 398e457..54fd5d6 100644
+--- a/DenseMtx/makefile
++++ b/DenseMtx/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/DenseMtx/src/makefile b/DenseMtx/src/makefile
+index 9c3f04b..e18a1d7 100644
+--- a/DenseMtx/src/makefile
++++ b/DenseMtx/src/makefile
+@@ -21,11 +21,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Drand/makefile b/Drand/makefile
+index d25e70a..1eb6b5f 100644
+--- a/Drand/makefile
++++ b/Drand/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Drand/src/makefile b/Drand/src/makefile
+index a687159..e06b7d9 100644
+--- a/Drand/src/makefile
++++ b/Drand/src/makefile
+@@ -16,11 +16,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/EGraph/EGraph.h b/EGraph/EGraph.h
+index 2aab3a0..6b7621d 100644
+--- a/EGraph/EGraph.h
++++ b/EGraph/EGraph.h
+@@ -125,7 +125,7 @@ EGraph_mkAdjGraph (
+ */
+ /*
+    --------------------------------------------------------------
+-   make an element graph for a n1 x n2 grid with ncomp components
++   mingw32-make an element graph for a n1 x n2 grid with ncomp components
+  
+    created -- 95nov03, cca
+    --------------------------------------------------------------
+@@ -139,7 +139,7 @@ EGraph_make9P (
+ /*
+ 
+ -------------------------------------------------------------------
+-  make an element graph for a n1 x n2 x n3 grid with ncomp
++  mingw32-make an element graph for a n1 x n2 x n3 grid with ncomp
+ components
+  
+    created -- 95nov03, cca
+diff --git a/EGraph/makefile b/EGraph/makefile
+index d25e70a..1eb6b5f 100644
+--- a/EGraph/makefile
++++ b/EGraph/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/EGraph/src/makefile b/EGraph/src/makefile
+index 0824275..f460769 100644
+--- a/EGraph/src/makefile
++++ b/EGraph/src/makefile
+@@ -18,11 +18,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/EGraph/src/misc.c b/EGraph/src/misc.c
+index 8eec6ce..d484f1d 100644
+--- a/EGraph/src/misc.c
++++ b/EGraph/src/misc.c
+@@ -7,7 +7,7 @@
+ /*--------------------------------------------------------------------*/
+ /*
+    --------------------------------------------------------------
+-   make an element graph for a n1 x n2 grid with ncomp components
++   mingw32-make an element graph for a n1 x n2 grid with ncomp components
+ 
+    created -- 95nov03, cca
+    --------------------------------------------------------------
+@@ -86,7 +86,7 @@ return(egraph) ; }
+ /*--------------------------------------------------------------------*/
+ /*
+    -------------------------------------------------------------------
+-   make an element graph for a n1 x n2 x n3 grid with ncomp components
++   mingw32-make an element graph for a n1 x n2 x n3 grid with ncomp components
+ 
+    created -- 95nov03, cca
+    -------------------------------------------------------------------
+diff --git a/ETree/doc/proto.tex b/ETree/doc/proto.tex
+index 946a6bf..fb0ef39 100644
+--- a/ETree/doc/proto.tex
++++ b/ETree/doc/proto.tex
+@@ -323,7 +323,7 @@ This method initializes a front tree to factor
+ a {\tt n x n} dense matrix.
+ If {\tt option == 1}, then all fronts (save possibly the last) have
+ the same number of internal vertices, namely {\tt param}.
+-If {\tt option == 2}, then we try to make all fronts have the same
++If {\tt option == 2}, then we try to mingw32-make all fronts have the same
+ number of entries in their (1,1), (1,2) and (2,1) blocks, namely
+ {\tt param} entries.
+ \par \noindent {\it Error checking:}
+diff --git a/ETree/drivers/mkNDETree.c b/ETree/drivers/mkNDETree.c
+index 29b16c6..499d4be 100644
+--- a/ETree/drivers/mkNDETree.c
++++ b/ETree/drivers/mkNDETree.c
+@@ -10,7 +10,7 @@ int
+ main ( int argc, char *argv[] )
+ /*
+    ------------------------------------------------------------
+-   make ETree objects for nested dissection on a regular grid
++   mingw32-make ETree objects for nested dissection on a regular grid
+ 
+    1 -- vertex elimination tree
+    2 -- fundamental supernode front tree
+diff --git a/ETree/drivers/testMS.c b/ETree/drivers/testMS.c
+index 9b4172c..6a287ae 100644
+--- a/ETree/drivers/testMS.c
++++ b/ETree/drivers/testMS.c
+@@ -112,7 +112,7 @@ if ( msglvl > 2 ) {
+ fflush(msgFile) ;
+ /*
+    --------------------
+-   make the multisector
++   mingw32-make the multisector
+    --------------------
+ */
+ switch ( flag ) {
+diff --git a/ETree/makefile b/ETree/makefile
+index d25e70a..1eb6b5f 100644
+--- a/ETree/makefile
++++ b/ETree/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/ETree/src/makefile b/ETree/src/makefile
+index 8fd65a3..300f4f1 100644
+--- a/ETree/src/makefile
++++ b/ETree/src/makefile
+@@ -28,11 +28,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/ETree/src/maps.c b/ETree/src/maps.c
+index 19f0aa5..447cca7 100644
+--- a/ETree/src/maps.c
++++ b/ETree/src/maps.c
+@@ -215,7 +215,7 @@ fflush(stdout) ;
+ #endif
+ /*
+    -----------------------------------
+-   left justify the tree to make the 
++   left justify the tree to mingw32-make the 
+    assignment algorithm work correctly
+    -----------------------------------
+ */
+diff --git a/ETree/src/transform.c b/ETree/src/transform.c
+index 1e36981..7c6f852 100644
+--- a/ETree/src/transform.c
++++ b/ETree/src/transform.c
+@@ -258,7 +258,7 @@ for ( K = Tree_postOTfirst(tree) ;
+ /*
+    -------------------------------------------------
+    take the map from fronts to representative fronts
+-   and make the map from old fronts to new fronts
++   and mingw32-make the map from old fronts to new fronts
+    -------------------------------------------------
+ */
+ mapIV = IV_new() ;
+@@ -420,7 +420,7 @@ for ( K = Tree_postOTfirst(tree) ;
+ /*
+    -------------------------------------------------
+    take the map from fronts to representative fronts
+-   and make the map from old fronts to new fronts
++   and mingw32-make the map from old fronts to new fronts
+    -------------------------------------------------
+ */
+ mapIV = IV_new() ;
+@@ -569,7 +569,7 @@ for ( J = Tree_postOTfirst(tree) ;
+ /*
+    -------------------------------------------------
+    take the map from fronts to representative fronts
+-   and make the map from old fronts to new fronts
++   and mingw32-make the map from old fronts to new fronts
+    -------------------------------------------------
+ */
+ mapIV = IV_new() ;
+diff --git a/Eigen/drivers/makefile b/Eigen/drivers/makefile
+index 330438a..831ee22 100644
+--- a/Eigen/drivers/makefile
++++ b/Eigen/drivers/makefile
+@@ -47,11 +47,11 @@ LIBS_FOR_MPI    = $(LANCZOS_MPI_LIB) ../srcMPI/BridgeMPI.a \
+ # dependencies for Bridge objects
+ # 
+ STlibs :
+-	cd ../srcST ; make Bridge.a
++	cd ../srcST ; mingw32-make Bridge.a
+ MTlibs :
+-	cd ../srcMT ; make BridgeMT.a
++	cd ../srcMT ; mingw32-make BridgeMT.a
+ MPIlibs :
+-	cd ../srcMPI ; make BridgeMPI.a
++	cd ../srcMPI ; mingw32-make BridgeMPI.a
+ #-----------------------------------------------------------------------
+ 
+ all_drivers : ${DRIVERS}
+diff --git a/Eigen/makefile b/Eigen/makefile
+index 6fea9b1..139a2d1 100644
+--- a/Eigen/makefile
++++ b/Eigen/makefile
+@@ -1,14 +1,14 @@
+ all_drivers :
+-	cd drivers ; make all_drivers
++	cd drivers ; mingw32-make all_drivers
+ 
+ lib :
+-	cd srcMPI  ; make BridgeMPI.a
+-	cd srcMT   ; make BridgeMT.a
+-	cd srcST   ; make Bridge.a
++	cd srcMPI  ; mingw32-make BridgeMPI.a
++	cd srcMT   ; mingw32-make BridgeMT.a
++	cd srcST   ; mingw32-make Bridge.a
+ 
+ clean :
+-	cd srcMPI  ; make clean
+-	cd srcMT   ; make clean
+-	cd srcST   ; make clean
+-	cd drivers ; make clean
+-	cd doc     ; make clean
++	cd srcMPI  ; mingw32-make clean
++	cd srcMT   ; mingw32-make clean
++	cd srcST   ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc     ; mingw32-make clean
+diff --git a/FrontMtx/FrontMtx.h b/FrontMtx/FrontMtx.h
+index 1b06b2d..767d6a6 100644
+--- a/FrontMtx/FrontMtx.h
++++ b/FrontMtx/FrontMtx.h
+@@ -974,7 +974,7 @@ FrontMtx_storeFront (
+       (2) permute lower and upper matrices if necessary
+       (3) update the block adjacency objects if necessary
+       (4) split the chevron submatrices into submatrices
+-          and make the submatrix indices local w.r.t their fronts
++          and mingw32-make the submatrix indices local w.r.t their fronts
+  
+    created -- 98mar05, cca
+    --------------------------------------------------------------
+diff --git a/FrontMtx/doc/intro.tex.bak b/FrontMtx/doc/intro.tex.bak
+index d22a7e6..df211fd 100644
+--- a/FrontMtx/doc/intro.tex.bak
++++ b/FrontMtx/doc/intro.tex.bak
+@@ -165,7 +165,7 @@ A_{\bnd{J},J} & = & L_{\bnd{J},J} D_{J,J} (I+U_{J,J})
+                  D_{I, I} U_{I, \bnd{I} \cap J}
+ \end{eqnarray*}
+ Since we are somewhat informal with our notation above, let us take
+-a moment to make it more precise.
++a moment to mingw32-make it more precise.
+ \begin{itemize}
+ \item
+ In the summation $\sum_{I < J}$, $I$ and $J$ are index sets.
+diff --git a/FrontMtx/makefile b/FrontMtx/makefile
+index d25e70a..1eb6b5f 100644
+--- a/FrontMtx/makefile
++++ b/FrontMtx/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/FrontMtx/src/makefile b/FrontMtx/src/makefile
+index 674db81..4695b5a 100644
+--- a/FrontMtx/src/makefile
++++ b/FrontMtx/src/makefile
+@@ -33,11 +33,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/FrontMtx/src/postProcess.c b/FrontMtx/src/postProcess.c
+index c96e06b..44b8436 100644
+--- a/FrontMtx/src/postProcess.c
++++ b/FrontMtx/src/postProcess.c
+@@ -10,7 +10,7 @@
+       (2) permute lower and upper matrices if necessary
+       (3) update the block adjacency objects if necessary
+       (4) split the chevron submatrices into submatrices
+-          and make the submatrix indices local w.r.t their fronts
++          and mingw32-make the submatrix indices local w.r.t their fronts
+ 
+    created -- 98mar05, cca
+    --------------------------------------------------------------
+diff --git a/GPart/GPart.h b/GPart/GPart.h
+index b90ef73..6a7fb8d 100644
+--- a/GPart/GPart.h
++++ b/GPart/GPart.h
+@@ -308,7 +308,7 @@ GPart_setMessageInfo (
+ */
+ /*
+    -------------------------------------------------------
+-   make the map from wide separator vertices Y 
++   mingw32-make the map from wide separator vertices Y 
+    to components {0, 1, 2, 3}.
+ 
+    YCmap[y] == 0 --> y is not adjacent to either component
+@@ -380,7 +380,7 @@ GPart_smoothBisector (
+    smooth a bisector using the alternating two-layer algorithm
+ 
+    option -- network flag
+-      1 --> make the network bipartite as for the
++      1 --> mingw32-make the network bipartite as for the
+             Dulmage-Mendelsohn decomposition
+       otherwise -- use network induced by the wide separator
+    alpha -- cost function parameter
+diff --git a/GPart/doc/proto.tex b/GPart/doc/proto.tex
+index b93beef..334a0c0 100644
+--- a/GPart/doc/proto.tex
++++ b/GPart/doc/proto.tex
+@@ -202,7 +202,7 @@ int GPart_vtxIsAdjToOneDomain ( GPart *gpart, int v, int *pdomid ) ;
+ \index{GPart_vtxIsAdjToOneDomain@{\tt GPart\_vtxIsAdjToOneDomain()}}
+ This method determines whether the vertex {\tt v} is
+ adjacent to just one domain or not. 
+-We use this method to make a separator or multisector minimal.
++We use this method to mingw32-make a separator or multisector minimal.
+ If the vertex is adjacent to only one domain, the return value is
+ {\tt 1} and {\tt *pdomid} is set to the domain's id.
+ If a vertex is adjacent to zero or two or more domains, the return
+@@ -258,7 +258,7 @@ The {\tt minweight} and {\tt maxweight} parameters are the minimum
+ target weight and maximum target weight for a domain.
+ The {\tt seed} parameter is used to insert a degree of randomness
+ into the algorithm.
+-This allows us to make several runs and take the best partition.
++This allows us to mingw32-make several runs and take the best partition.
+ \par \noindent {\it Error checking:}
+ If {\tt gpart} or {\tt g} is {\tt NULL},
+ or if ${\tt freeze} \le 0.0$,
+@@ -320,7 +320,7 @@ $\displaystyle
+ \right)
+ $.
+ The {\tt seed} parameter is used to randomize the algorithm.
+-One can make several runs with different seeds and chose the best
++One can mingw32-make several runs with different seeds and chose the best
+ partition.
+ The {\tt cpus[]} array is used to store execution times for
+ segments of the algorithm:
+diff --git a/GPart/drivers/testRBviaDDsep.c b/GPart/drivers/testRBviaDDsep.c
+index c3e9fe8..8bf023d 100644
+--- a/GPart/drivers/testRBviaDDsep.c
++++ b/GPart/drivers/testRBviaDDsep.c
+@@ -238,7 +238,7 @@ ndnzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ ndops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n CPU %9.5f : make the elimination tree", t2 - t1) ;
++        "\n CPU %9.5f : mingw32-make the elimination tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n ND FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         ndnfind, ndnzf, ndops) ;
+@@ -306,7 +306,7 @@ msnzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ msops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n CPU %9.5f : make the elimination tree", t2 - t1) ;
++        "\n CPU %9.5f : mingw32-make the elimination tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n MS FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         msnfind, msnzf, msops) ;
+@@ -368,7 +368,7 @@ nzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ ops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n CPU %9.5f : make the elimination tree", t2 - t1) ;
++        "\n CPU %9.5f : mingw32-make the elimination tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         nfind, nzf, ops) ;
+diff --git a/GPart/drivers/testRBviaDDsep2.c b/GPart/drivers/testRBviaDDsep2.c
+index 0e13979..8d4aac3 100644
+--- a/GPart/drivers/testRBviaDDsep2.c
++++ b/GPart/drivers/testRBviaDDsep2.c
+@@ -50,7 +50,7 @@ if ( argc != 12 ) {
+       "\n    msglvl       -- message level"
+       "\n    msgFile      -- message file"
+       "\n    inGraphFile  -- input file, must be *.graphf or *.graphb"
+-      "\n    ntest        -- number of tests to make"
++      "\n    ntest        -- number of tests to mingw32-make"
+       "\n    minweight    -- minimum domain weight"
+       "\n    maxweight    -- maximum domain weight"
+       "\n    freeze       -- cutoff multiplier for nodes of high degree"
+@@ -276,7 +276,7 @@ for ( seed = 1 ; seed <= ntest ; seed++ ) {
+    msops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+    MARKTIME(t2) ;
+    fprintf(msgFile,  
+-           "\n CPU %9.5f : make the elimination tree", t2 - t1) ;
++           "\n CPU %9.5f : mingw32-make the elimination tree", t2 - t1) ;
+    fprintf(msgFile,  
+            "\n MS FACTOR : %9d indices, %9d entries, %9.0f operations", 
+            msnfind, msnzf, msops) ;
+@@ -347,7 +347,7 @@ for ( seed = 1 ; seed <= ntest ; seed++ ) {
+    ndops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+    MARKTIME(t2) ;
+    fprintf(msgFile,  
+-           "\n CPU %9.5f : make the elimination tree", t2 - t1) ;
++           "\n CPU %9.5f : mingw32-make the elimination tree", t2 - t1) ;
+    fprintf(msgFile,  
+            "\n ND FACTOR : %9d indices, %9d entries, %9.0f operations", 
+            ndnfind, ndnzf, ndops) ;
+diff --git a/GPart/makefile b/GPart/makefile
+index d25e70a..1eb6b5f 100644
+--- a/GPart/makefile
++++ b/GPart/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/GPart/src/DDviaFishnet.c b/GPart/src/DDviaFishnet.c
+index edb9ecf..b0b8c97 100644
+--- a/GPart/src/DDviaFishnet.c
++++ b/GPart/src/DDviaFishnet.c
+@@ -341,7 +341,7 @@ for ( iv = 0 ; iv < nvtx ; iv++ ) {
+ /*
+                -----------------------------------------
+                w has not yet been touched, put on list
+-               set compids[w] = -2 to make sure it isn't
++               set compids[w] = -2 to mingw32-make sure it isn't
+                put on the list twice
+                -----------------------------------------
+ */
+diff --git a/GPart/src/makeYCmap.c b/GPart/src/makeYCmap.c
+index 4a3bf96..da562c3 100644
+--- a/GPart/src/makeYCmap.c
++++ b/GPart/src/makeYCmap.c
+@@ -5,7 +5,7 @@
+ /*--------------------------------------------------------------------*/
+ /*
+    -------------------------------------------------------
+-   make the map from wide separator vertices Y 
++   mingw32-make the map from wide separator vertices Y 
+    to components {0, 1, 2, 3}.
+ 
+    YCmap[y] == 0 --> y is not adjacent to either component
+diff --git a/GPart/src/makefile b/GPart/src/makefile
+index 0558fc0..c060bdb 100644
+--- a/GPart/src/makefile
++++ b/GPart/src/makefile
+@@ -28,11 +28,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/GPart/src/smoothBy2layers.c b/GPart/src/smoothBy2layers.c
+index 5e7f2a8..8b3ea84 100644
+--- a/GPart/src/smoothBy2layers.c
++++ b/GPart/src/smoothBy2layers.c
+@@ -15,7 +15,7 @@ static float eval ( float alpha, float wS, float wB, float wW ) ;
+    smooth a bisector using the alternating two-layer algorithm
+ 
+    option -- network flag
+-      1 --> make the network bipartite as for the
++      1 --> mingw32-make the network bipartite as for the
+             Dulmage-Mendelsohn decomposition
+       otherwise -- use network induced by the wide separator
+    alpha -- cost function parameter
+diff --git a/Graph/makefile b/Graph/makefile
+index d25e70a..1eb6b5f 100644
+--- a/Graph/makefile
++++ b/Graph/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Graph/src/fillFromOffsets.c b/Graph/src/fillFromOffsets.c
+index f844042..5b2d70f 100644
+--- a/Graph/src/fillFromOffsets.c
++++ b/Graph/src/fillFromOffsets.c
+@@ -108,7 +108,7 @@ if ( v == neqns ) {
+ /*
+    -------------------------------------------
+    enforce symmetric structure and (v,v) edges
+-   make a first pass to check the input
++   mingw32-make a first pass to check the input
+    -------------------------------------------
+ */
+ fprintf(stdout, "\n offsets") ;
+diff --git a/Graph/src/makefile b/Graph/src/makefile
+index 888bf7b..c0196ac 100644
+--- a/Graph/src/makefile
++++ b/Graph/src/makefile
+@@ -23,11 +23,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/I2Ohash/makefile b/I2Ohash/makefile
+index 851c0ce..ed5c2d1 100644
+--- a/I2Ohash/makefile
++++ b/I2Ohash/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
+-	cd drivers ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
++	cd drivers ; mingw32-make clean
+diff --git a/I2Ohash/src/makefile b/I2Ohash/src/makefile
+index 5bb8adc..b42eebd 100644
+--- a/I2Ohash/src/makefile
++++ b/I2Ohash/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/IIheap/makefile b/IIheap/makefile
+index 398e457..54fd5d6 100644
+--- a/IIheap/makefile
++++ b/IIheap/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/IIheap/src/makefile b/IIheap/src/makefile
+index ffa0d93..f642e88 100644
+--- a/IIheap/src/makefile
++++ b/IIheap/src/makefile
+@@ -14,11 +14,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/ILUMtx/drivers/makefile b/ILUMtx/drivers/makefile
+index 03d4d20..02a6075 100644
+--- a/ILUMtx/drivers/makefile
++++ b/ILUMtx/drivers/makefile
+@@ -22,21 +22,21 @@ LIBS = \
+ DRIVERS = testFactor testSolve
+  
+ libs :
+-	cd ../src ; make ILUMtx.a
+-	cd ../../InpMtx/src ; make InpMtx.a
+-	cd ../../DenseMtx/src ; make DenseMtx.a
+-	cd ../../A2/src ; make A2.a
+-	cd ../../EGraph/src ; make EGraph.a
+-	cd ../../Graph/src ; make Graph.a
+-	cd ../../ETree/src ; make ETree.a
+-	cd ../../Tree/src ; make Tree.a
+-	cd ../../Coords/src ; make Coords.a
+-	cd ../../IVL/src ; make IVL.a
+-	cd ../../IV/src ; make IV.a
+-	cd ../../DV/src ; make DV.a
+-	cd ../../ZV/src ; make ZV.a
+-	cd ../../Utilities/src ; make Utilities.a
+-	cd ../../Drand/src ; make Drand.a
++	cd ../src ; mingw32-make ILUMtx.a
++	cd ../../InpMtx/src ; mingw32-make InpMtx.a
++	cd ../../DenseMtx/src ; mingw32-make DenseMtx.a
++	cd ../../A2/src ; mingw32-make A2.a
++	cd ../../EGraph/src ; mingw32-make EGraph.a
++	cd ../../Graph/src ; mingw32-make Graph.a
++	cd ../../ETree/src ; mingw32-make ETree.a
++	cd ../../Tree/src ; mingw32-make Tree.a
++	cd ../../Coords/src ; mingw32-make Coords.a
++	cd ../../IVL/src ; mingw32-make IVL.a
++	cd ../../IV/src ; mingw32-make IV.a
++	cd ../../DV/src ; mingw32-make DV.a
++	cd ../../ZV/src ; mingw32-make ZV.a
++	cd ../../Utilities/src ; mingw32-make Utilities.a
++	cd ../../Drand/src ; mingw32-make Drand.a
+ 
+ drivers : ${DRIVERS}
+ 
+diff --git a/ILUMtx/makefile b/ILUMtx/makefile
+index d25e70a..1eb6b5f 100644
+--- a/ILUMtx/makefile
++++ b/ILUMtx/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/IV/makefile b/IV/makefile
+index d25e70a..1eb6b5f 100644
+--- a/IV/makefile
++++ b/IV/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/IV/src/makefile b/IV/src/makefile
+index cdb5e2c..7bb5c42 100644
+--- a/IV/src/makefile
++++ b/IV/src/makefile
+@@ -18,11 +18,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/IVL/IVL.h b/IVL/IVL.h
+index 2b5150f..beb32c0 100644
+--- a/IVL/IVL.h
++++ b/IVL/IVL.h
+@@ -486,7 +486,7 @@ IVL_setPointerToList (
+ */
+ /*
+    -----------------------------------------------------------
+-   purpose -- to make and return a 9-point adjacency structure
++   purpose -- to mingw32-make and return a 9-point adjacency structure
+  
+    input --
+  
+@@ -503,7 +503,7 @@ IVL_make9P (
+ ) ;
+ /*
+    ------------------------------------------------------------
+-   purpose -- to make and return a 27-point adjacency structure
++   purpose -- to mingw32-make and return a 27-point adjacency structure
+  
+    input --
+  
+@@ -522,7 +522,7 @@ IVL_make27P (
+ ) ;
+ /*
+    ------------------------------------------------------------
+-   purpose -- to make and return a 13-point adjacency structure
++   purpose -- to mingw32-make and return a 13-point adjacency structure
+  
+    input --
+  
+@@ -539,7 +539,7 @@ IVL_make13P (
+ ) ;
+ /*
+    -----------------------------------------------------------
+-   purpose -- to make and return a 5-point adjacency structure
++   purpose -- to mingw32-make and return a 5-point adjacency structure
+  
+    input --
+  
+diff --git a/IVL/doc/intro.tex b/IVL/doc/intro.tex
+index e1eaee4..e620601 100644
+--- a/IVL/doc/intro.tex
++++ b/IVL/doc/intro.tex
+@@ -4,7 +4,7 @@ The {\tt IVL} object is used to handle a list of {\tt int} vectors,
+ thus the acronym {\bf I}nteger {\bf V}ector {\bf L}ist.
+ The most common use is to represent a graph or the adjacency
+ structure of a matrix.
+-We have tried to make this object easy to use, and much hinges on
++We have tried to mingw32-make this object easy to use, and much hinges on
+ the ability to create new lists or change the size of a list.
+ In the interests of efficiency, this object is not a general
+ purpose storage object, i.e., free'd data is not reused.
+diff --git a/IVL/makefile b/IVL/makefile
+index a9f1e9a..e6d5ad9 100644
+--- a/IVL/makefile
++++ b/IVL/makefile
+@@ -2,9 +2,9 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
+-	cd drivers ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
++	cd drivers ; mingw32-make clean
+diff --git a/IVL/src/makefile b/IVL/src/makefile
+index 0d7cb18..cdfc0b3 100644
+--- a/IVL/src/makefile
++++ b/IVL/src/makefile
+@@ -21,11 +21,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/IVL/src/misc.c b/IVL/src/misc.c
+index cfba71f..593d621 100644
+--- a/IVL/src/misc.c
++++ b/IVL/src/misc.c
+@@ -5,7 +5,7 @@
+ /*--------------------------------------------------------------------*/
+ /*
+    -----------------------------------------------------------
+-   purpose -- to make and return a 9-point adjacency structure
++   purpose -- to mingw32-make and return a 9-point adjacency structure
+ 
+    input --
+ 
+@@ -73,7 +73,7 @@ return(ivl) ; }
+ /*--------------------------------------------------------------------*/
+ /*
+    ------------------------------------------------------------
+-   purpose -- to make and return a 27-point adjacency structure
++   purpose -- to mingw32-make and return a 27-point adjacency structure
+ 
+    input --
+ 
+@@ -177,7 +177,7 @@ return(ivl) ; }
+ /*--------------------------------------------------------------------*/
+ /*
+    ------------------------------------------------------------
+-   purpose -- to make and return a 13-point adjacency structure
++   purpose -- to mingw32-make and return a 13-point adjacency structure
+ 
+    input --
+ 
+@@ -262,7 +262,7 @@ return(ivl) ; }
+ /*--------------------------------------------------------------------*/
+ /*
+    -----------------------------------------------------------
+-   purpose -- to make and return a 5-point adjacency structure
++   purpose -- to mingw32-make and return a 5-point adjacency structure
+ 
+    input --
+ 
+diff --git a/Ideq/makefile b/Ideq/makefile
+index 398e457..54fd5d6 100644
+--- a/Ideq/makefile
++++ b/Ideq/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Ideq/src/makefile b/Ideq/src/makefile
+index 93a9e1b..a594cdb 100644
+--- a/Ideq/src/makefile
++++ b/Ideq/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/InpMtx/drivers/testInput.c b/InpMtx/drivers/testInput.c
+index 93ae98d..97bd159 100644
+--- a/InpMtx/drivers/testInput.c
++++ b/InpMtx/drivers/testInput.c
+@@ -90,7 +90,7 @@ if ( n1 == 1 ) {
+ }
+ nent = IVL_tsize(adjIVL) ;
+ MARKTIME(t2) ;
+-fprintf(msgFile, "\n\n CPU %8.3f : make full adjacency, %d entries", 
++fprintf(msgFile, "\n\n CPU %8.3f : mingw32-make full adjacency, %d entries", 
+         t2 - t1, nent) ;
+ if ( msglvl > 1 ) {
+    fprintf(msgFile, "\n\n full adjacency structure, %d entries", nent) ;
+@@ -98,7 +98,7 @@ if ( msglvl > 1 ) {
+ }
+ /*
+    ----------------------------------
+-   make the lower adjacency structure
++   mingw32-make the lower adjacency structure
+    ----------------------------------
+ */
+ MARKTIME(t1) ;
+@@ -116,7 +116,7 @@ for ( irow = 0 ; irow < neqns ; irow++ ) {
+ }
+ nent = IVL_tsize(lowerIVL) ;
+ MARKTIME(t2) ;
+-fprintf(msgFile, "\n\n CPU %8.3f : make lower adjacency, %d entries", 
++fprintf(msgFile, "\n\n CPU %8.3f : mingw32-make lower adjacency, %d entries", 
+         t2 - t1, nent) ;
+ if ( msglvl > 1 ) {
+    fprintf(msgFile, "\n\n lower adjacency structure, %d entries", nent);
+diff --git a/InpMtx/drivers/testR2D.c b/InpMtx/drivers/testR2D.c
+index 163379f..360ab2c 100644
+--- a/InpMtx/drivers/testR2D.c
++++ b/InpMtx/drivers/testR2D.c
+@@ -249,8 +249,8 @@ if ( msglvl > 1 ) {
+ /*
+    ---------------------------------------------------
+    the matrix as constructed is singular,
+-   uncomment this code to make node 0 a dirichlet node
+-   and so make the matrix nonsingular
++   uncomment this code to mingw32-make node 0 a dirichlet node
++   and so mingw32-make the matrix nonsingular
+    ---------------------------------------------------
+ */
+ /*
+diff --git a/InpMtx/makefile b/InpMtx/makefile
+index d25e70a..1eb6b5f 100644
+--- a/InpMtx/makefile
++++ b/InpMtx/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/InpMtx/src/makefile b/InpMtx/src/makefile
+index 8485180..fb13a16 100644
+--- a/InpMtx/src/makefile
++++ b/InpMtx/src/makefile
+@@ -30,11 +30,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Iter/src/makefile b/Iter/src/makefile
+index 8050077..ad4ba14 100644
+--- a/Iter/src/makefile
++++ b/Iter/src/makefile
+@@ -33,10 +33,10 @@ clean :
+  
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+diff --git a/LinSol/drivers/makefile b/LinSol/drivers/makefile
+index 7e5c994..2943203 100644
+--- a/LinSol/drivers/makefile
++++ b/LinSol/drivers/makefile
+@@ -19,15 +19,15 @@ include ../../Make.inc
+ DRIVERS = testWrapper testWrapperMT testWrapperMPI
+  
+ STlib :
+-	cd ../srcST ; make Bridge.a
++	cd ../srcST ; mingw32-make Bridge.a
+ 
+ MTlib :
+-	cd ../srcMT ; make BridgeMT.a
+-	cd ../../MT/src ; make spoolesMT.a
++	cd ../srcMT ; mingw32-make BridgeMT.a
++	cd ../../MT/src ; mingw32-make spoolesMT.a
+ 
+ MPIlib :
+-	cd ../srcMPI ; make BridgeMPI.a
+-	cd ../../MPI/src ; make spoolesMPI.a
++	cd ../srcMPI ; mingw32-make BridgeMPI.a
++	cd ../../MPI/src ; mingw32-make spoolesMPI.a
+ 
+ LIBS_FOR_ST = ../srcST/Bridge.a ../../spooles.a -lm
+ 
+diff --git a/LinSol/makefile b/LinSol/makefile
+index 35fa251..f88d78b 100644
+--- a/LinSol/makefile
++++ b/LinSol/makefile
+@@ -2,13 +2,13 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd srcST  ; make Bridge.a
+-	cd srcMT  ; make BridgeMT.a
+-	cd srcMPI ; make BridgeMPI.a
++	cd srcST  ; mingw32-make Bridge.a
++	cd srcMT  ; mingw32-make BridgeMT.a
++	cd srcMPI ; mingw32-make BridgeMPI.a
+ 
+ clean :
+-	cd srcST   ; make clean
+-	cd srcMT   ; make clean
+-	cd srcMPI  ; make clean
+-	cd doc     ; make clean
+-	cd drivers ; make clean
++	cd srcST   ; mingw32-make clean
++	cd srcMT   ; mingw32-make clean
++	cd srcMPI  ; mingw32-make clean
++	cd doc     ; mingw32-make clean
++	cd drivers ; mingw32-make clean
+diff --git a/Lock/doc/intro.tex b/Lock/doc/intro.tex
+index 3856ccf..90be117 100644
+--- a/Lock/doc/intro.tex
++++ b/Lock/doc/intro.tex
+@@ -19,7 +19,7 @@ At present we have the Solaris and POSIX thread libraries supported
+ by the {\tt Lock} object.
+ The header file {\tt Lock.h} contains {\tt \#if/\#endif} statements
+ that switch over the supported libraries.
+-The {\tt THREAD\_TYPE} parameter is used to make the switch.
++The {\tt THREAD\_TYPE} parameter is used to mingw32-make the switch.
+ Porting the library to another thread package requires making
+ changes to the {\tt Lock} object.
+ The parallel factor and solve methods that belong to the 
+diff --git a/Lock/makefile b/Lock/makefile
+index 398e457..54fd5d6 100644
+--- a/Lock/makefile
++++ b/Lock/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Lock/src/makefile b/Lock/src/makefile
+index 341d59e..62be4eb 100644
+--- a/Lock/src/makefile
++++ b/Lock/src/makefile
+@@ -16,11 +16,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/MPI/doc/dataStructure.tex b/MPI/doc/dataStructure.tex
+index b1c9440..3538b91 100644
+--- a/MPI/doc/dataStructure.tex
++++ b/MPI/doc/dataStructure.tex
+@@ -28,7 +28,7 @@ This requires entries of $X$ to be {\it gathered} into $X_{supp}^q$
+ and the entries of $Y_{supp}^q$ be {\it scatter/added} into $Y$.
+ \par
+ The {\tt MatMulInfo} object stores all the necessary information to
+-make this happen.
++mingw32-make this happen.
+ There is one {\tt MatMulInfo} object per processor.
+ It has the following fields.
+ \begin{itemize}
+diff --git a/MPI/doc/main.log b/MPI/doc/main.log
+index b21636c..185c39f 100644
+--- a/MPI/doc/main.log
++++ b/MPI/doc/main.log
+@@ -50,7 +50,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
+ 
+ Overfull \hbox (0.87425pt too wide) in paragraph at lines 30--34
+ []\OT1/cmr/m/n/10 The \OT1/cmtt/m/n/10 MatMulInfo \OT1/cmr/m/n/10 ob-ject store
+-s all the nec-es-sary in-for-ma-tion to make this hap-pen. There is one \OT1/cm
++s all the nec-es-sary in-for-ma-tion to mingw32-make this hap-pen. There is one \OT1/cm
+ tt/m/n/10 MatMulInfo
+  []
+ 
+diff --git a/MPI/drivers/makefile b/MPI/drivers/makefile
+index ccb374c..68d3284 100644
+--- a/MPI/drivers/makefile
++++ b/MPI/drivers/makefile
+@@ -19,7 +19,7 @@ DRIVERS = allInOneMPI patchAndGoMPI testGridMPI testIV_allgather \
+           testScatterDenseMtx testScatterInpMtx
+  
+ libs :
+-	cd ../src ; make spoolesMPI.a 
++	cd ../src ; mingw32-make spoolesMPI.a 
+ 
+ drivers : ${DRIVERS}
+  
+diff --git a/MPI/drivers/testGather.c b/MPI/drivers/testGather.c
+index f5dd38c..9c87d43 100644
+--- a/MPI/drivers/testGather.c
++++ b/MPI/drivers/testGather.c
+@@ -136,7 +136,7 @@ if ( msglvl > 2 ) {
+ }
+ /*
+    ------------------------------------------------
+-   make sure that each processor has some rows of X
++   mingw32-make sure that each processor has some rows of X
+    ------------------------------------------------
+ */
+ counts = IVinit(nproc, 0) ;
+@@ -274,7 +274,7 @@ if ( msglvl > 2 ) {
+ }
+ /*
+    ----------------------------------------
+-   make the lists in sendIVL local w.r.t. X
++   mingw32-make the lists in sendIVL local w.r.t. X
+    ----------------------------------------
+ */
+ for ( irow = 0 ; irow < nrowX ; irow++ ) {
+@@ -292,7 +292,7 @@ if ( msglvl > 2 ) {
+ }
+ /*
+    ----------------------------------------
+-   make the lists in recvIVL local w.r.t. Y
++   mingw32-make the lists in recvIVL local w.r.t. Y
+    ----------------------------------------
+ */
+ for ( irow = 0 ; irow < nrowY ; irow++ ) {
+diff --git a/MPI/makefile b/MPI/makefile
+index 0c09f86..70fd405 100644
+--- a/MPI/makefile
++++ b/MPI/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make spoolesMPI.a
++	cd src ; mingw32-make spoolesMPI.a
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/MPI/spoolesMPI.h b/MPI/spoolesMPI.h
+index 9ff31c6..ef70aa5 100644
+--- a/MPI/spoolesMPI.h
++++ b/MPI/spoolesMPI.h
+@@ -457,7 +457,7 @@ SymbFac_MPI_initFromInpMtx (
+       (2) permute lower and upper matrices if necessary
+       (3) update the block adjacency objects if necessary
+       (4) split the chevron submatrices into submatrices
+-          and make the submatrix indices local w.r.t their fronts
++          and mingw32-make the submatrix indices local w.r.t their fronts
+  
+    created -- 98may20, cca
+    --------------------------------------------------------------
+diff --git a/MPI/src/MMM.c b/MPI/src/MMM.c
+index 319b72d..6ca8a47 100644
+--- a/MPI/src/MMM.c
++++ b/MPI/src/MMM.c
+@@ -190,10 +190,10 @@ if ( msglvl > 2 ) {
+ }
+ /*
+    --------------------------------------
+-   make XsendIVL local w.r.t. local X
+-   make XrecvIVL local w.r.t. supported X
+-   make YsendIVL local w.r.t. supported Y
+-   make YrecvIVL local w.r.t. local Y
++   mingw32-make XsendIVL local w.r.t. local X
++   mingw32-make XrecvIVL local w.r.t. supported X
++   mingw32-make YsendIVL local w.r.t. supported Y
++   mingw32-make YrecvIVL local w.r.t. local Y
+    --------------------------------------
+ */
+ if ( IV_size(XownedIV) > 0 ) {
+diff --git a/MPI/src/postProcess.c b/MPI/src/postProcess.c
+index 100577f..83dc044 100644
+--- a/MPI/src/postProcess.c
++++ b/MPI/src/postProcess.c
+@@ -10,7 +10,7 @@
+       (2) permute lower and upper matrices if necessary
+       (3) update the block adjacency objects if necessary
+       (4) split the chevron submatrices into submatrices
+-          and make the submatrix indices local w.r.t their fronts
++          and mingw32-make the submatrix indices local w.r.t their fronts
+ 
+    created -- 98may20, cca
+    --------------------------------------------------------------
+diff --git a/MSMD/drivers/orderViaMMD.c b/MSMD/drivers/orderViaMMD.c
+index f24ffef..aeedeb8 100644
+--- a/MSMD/drivers/orderViaMMD.c
++++ b/MSMD/drivers/orderViaMMD.c
+@@ -175,7 +175,7 @@ nzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ ops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n\n CPU %9.5f : make the front tree", t2 - t1) ;
++        "\n\n CPU %9.5f : mingw32-make the front tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         nfind, nzf, ops) ;
+diff --git a/MSMD/drivers/orderViaMS.c b/MSMD/drivers/orderViaMS.c
+index 7739b07..c2be2e6 100644
+--- a/MSMD/drivers/orderViaMS.c
++++ b/MSMD/drivers/orderViaMS.c
+@@ -211,7 +211,7 @@ nzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ ops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n\n CPU %9.5f : make the front tree", t2 - t1) ;
++        "\n\n CPU %9.5f : mingw32-make the front tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         nfind, nzf, ops) ;
+diff --git a/MSMD/drivers/orderViaND.c b/MSMD/drivers/orderViaND.c
+index fa31f2f..15d2724 100644
+--- a/MSMD/drivers/orderViaND.c
++++ b/MSMD/drivers/orderViaND.c
+@@ -211,7 +211,7 @@ nzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ ops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n\n CPU %9.5f : make the front tree", t2 - t1) ;
++        "\n\n CPU %9.5f : mingw32-make the front tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         nfind, nzf, ops) ;
+diff --git a/MSMD/drivers/orderViaStages.c b/MSMD/drivers/orderViaStages.c
+index 4dc88b8..2affd93 100644
+--- a/MSMD/drivers/orderViaStages.c
++++ b/MSMD/drivers/orderViaStages.c
+@@ -203,7 +203,7 @@ nzf   = ETree_nFactorEntries(etree, SPOOLES_SYMMETRIC) ;
+ ops   = ETree_nFactorOps(etree, SPOOLES_REAL, SPOOLES_SYMMETRIC) ;
+ MARKTIME(t2) ;
+ fprintf(msgFile,  
+-        "\n\n CPU %9.5f : make the front tree", t2 - t1) ;
++        "\n\n CPU %9.5f : mingw32-make the front tree", t2 - t1) ;
+ fprintf(msgFile,  
+         "\n FACTOR : %9d indices, %9d entries, %9.0f operations", 
+         nfind, nzf, ops) ;
+diff --git a/MSMD/makefile b/MSMD/makefile
+index d25e70a..1eb6b5f 100644
+--- a/MSMD/makefile
++++ b/MSMD/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/MSMD/src/makefile b/MSMD/src/makefile
+index e89c105..1b2a725 100644
+--- a/MSMD/src/makefile
++++ b/MSMD/src/makefile
+@@ -25,11 +25,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/MSMD/src/order.c b/MSMD/src/order.c
+index 4aedcda..b8b6441 100644
+--- a/MSMD/src/order.c
++++ b/MSMD/src/order.c
+@@ -167,7 +167,7 @@ MSMD_findInodes(msmd, info) ;
+ }
+ /*
+    ---------------------------------------------------------
+-   make info->stagInfo point back to beginning of the stages
++   mingw32-make info->stagInfo point back to beginning of the stages
+    ---------------------------------------------------------
+ */
+ info->stageInfo -= nstage + 1 ;
+diff --git a/MT/drivers/makefile b/MT/drivers/makefile
+index 4811e3e..a89348c 100644
+--- a/MT/drivers/makefile
++++ b/MT/drivers/makefile
+@@ -12,7 +12,7 @@ DRIVERS = testMMM \
+           testFactorMT
+ 
+ libs :
+-	cd ../src ; make spoolesMT.a
++	cd ../src ; mingw32-make spoolesMT.a
+ 
+ drivers : ${DRIVERS}
+ 
+diff --git a/MT/makefile b/MT/makefile
+index 9b86a32..1184f72 100644
+--- a/MT/makefile
++++ b/MT/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make spoolesMT.a
++	cd src ; mingw32-make spoolesMT.a
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/MT/src/makefile b/MT/src/makefile
+index d70a171..d1b8b99 100644
+--- a/MT/src/makefile
++++ b/MT/src/makefile
+@@ -18,11 +18,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Make.inc b/Make.inc
+index f99eb8f..bfe8db8 100644
+--- a/Make.inc
++++ b/Make.inc
+@@ -11,8 +11,8 @@
+ #
+ # for solaris
+ #
+-# CC = gcc
+-  CC = /usr/lang-4.0/bin/cc
++CC = gcc
++#  CC = /usr/lang-4.0/bin/cc
+ #
+ # for sgi
+ #
+@@ -25,8 +25,8 @@
+ #----------------------------------------
+ #
+ #  set the compiler flags
+-# 
+-# OPTLEVEL = 
++#
++# OPTLEVEL =
+ # OPTLEVEL = -g -v
+   OPTLEVEL = -O
+ # OPTLEVEL = -xO5 -v
+@@ -58,13 +58,13 @@
+ #
+ #  set the purify environment (a memory monitoring tool)
+ #
+-  PURIFY = 
++  PURIFY =
+ # PURIFY = /usr/local/purify-4.0.1/purify
+ #
+ #  purify wouldn't work with the newest version of the gcc library,
+ #  so we had to force loading the old version
+ #
+-  PURIFY_GCC_VERSION = 
++  PURIFY_GCC_VERSION =
+ # PURIFY_GCC_VERSION = -V 2.7.2
+ #
+ #---------------------------------------------------------------------
+@@ -86,14 +86,14 @@
+ #
+ #  set suffix rule *.c --> *.o
+ #
+-.c.o : 
++.c.o :
+ 	$(PURIFY) $(CC) -c $(CFLAGS) $<
+ #
+ #---------------------------------------------------------------------
+ #
+ #  set suffix rule *.c --> *.a
+ #
+-.c.a : 
++.c.a :
+ 	$(PURIFY) $(CC) -c $(CFLAGS) $<
+ 	$(AR) $(ARFLAGS) $@ $*.o
+ 	rm -f $*.o
+@@ -102,7 +102,7 @@
+ #
+ #  MPI install library
+ #
+-# MPI_INSTALL_DIR = 
++# MPI_INSTALL_DIR =
+   MPI_INSTALL_DIR = /usr/local/mpich-1.0.13
+ #
+ #---------------------------------------------------------------------
+@@ -111,7 +111,7 @@
+ #
+ # for sgi
+ #
+-# MPI_LIB_PATH = 
++# MPI_LIB_PATH =
+ #
+ # for solaris
+ #
+@@ -119,11 +119,11 @@
+ #
+ # for hp
+ #
+-# MPI_LIB_PATH = 
++# MPI_LIB_PATH =
+ #
+ #---------------------------------------------------------------------
+ #
+-#  MPI libraries 
++#  MPI libraries
+ #
+ # for solaris
+ #
+@@ -131,17 +131,17 @@
+ #
+ # for sgi
+ #
+-# MPI_LIBS = $(MPI_LIB_PATH) -lmpi -lpthread 
++# MPI_LIBS = $(MPI_LIB_PATH) -lmpi -lpthread
+ #
+ # for hp
+ # MPI_LIBS = -lpthread
+-# MPI_LIBS = $(MPI_LIB_PATH) -lpthread 
++# MPI_LIBS = $(MPI_LIB_PATH) -lpthread
+ #
+ #---------------------------------------------------------------------
+ #
+ #  MPI include path
+ #
+-# MPI_INCLUDE_DIR = 
++# MPI_INCLUDE_DIR =
+   MPI_INCLUDE_DIR = -I$(MPI_INSTALL_DIR)/include
+ #
+ #---------------------------------------------------------------------
+diff --git a/Network/makefile b/Network/makefile
+index 398e457..54fd5d6 100644
+--- a/Network/makefile
++++ b/Network/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Network/src/makefile b/Network/src/makefile
+index 87e8ae1..dab7f30 100644
+--- a/Network/src/makefile
++++ b/Network/src/makefile
+@@ -21,11 +21,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/PatchAndGoInfo/makefile b/PatchAndGoInfo/makefile
+index 398e457..54fd5d6 100644
+--- a/PatchAndGoInfo/makefile
++++ b/PatchAndGoInfo/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/PatchAndGoInfo/src/makefile b/PatchAndGoInfo/src/makefile
+index 36f900c..0d7d069 100644
+--- a/PatchAndGoInfo/src/makefile
++++ b/PatchAndGoInfo/src/makefile
+@@ -15,11 +15,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Pencil/makefile b/Pencil/makefile
+index 398e457..54fd5d6 100644
+--- a/Pencil/makefile
++++ b/Pencil/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Pencil/src/makefile b/Pencil/src/makefile
+index b0c9934..7669685 100644
+--- a/Pencil/src/makefile
++++ b/Pencil/src/makefile
+@@ -20,11 +20,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Perm/makefile b/Perm/makefile
+index d25e70a..1eb6b5f 100644
+--- a/Perm/makefile
++++ b/Perm/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Perm/src/makefile b/Perm/src/makefile
+index 26aaf96..ebf9fa9 100644
+--- a/Perm/src/makefile
++++ b/Perm/src/makefile
+@@ -18,11 +18,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/SemiImplMtx/makefile b/SemiImplMtx/makefile
+index d25e70a..1eb6b5f 100644
+--- a/SemiImplMtx/makefile
++++ b/SemiImplMtx/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/SemiImplMtx/src/makefile b/SemiImplMtx/src/makefile
+index b2a12c5..7fd5c03 100644
+--- a/SemiImplMtx/src/makefile
++++ b/SemiImplMtx/src/makefile
+@@ -18,11 +18,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/SolveMap/makefile b/SolveMap/makefile
+index 398e457..54fd5d6 100644
+--- a/SolveMap/makefile
++++ b/SolveMap/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/SolveMap/src/makefile b/SolveMap/src/makefile
+index 5d02f12..4bf265f 100644
+--- a/SolveMap/src/makefile
++++ b/SolveMap/src/makefile
+@@ -20,11 +20,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/SubMtx/makefile b/SubMtx/makefile
+index d25e70a..1eb6b5f 100644
+--- a/SubMtx/makefile
++++ b/SubMtx/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/SubMtx/src/makefile b/SubMtx/src/makefile
+index 0297c3f..67c95ec 100644
+--- a/SubMtx/src/makefile
++++ b/SubMtx/src/makefile
+@@ -27,11 +27,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/SubMtxList/makefile b/SubMtxList/makefile
+index 398e457..54fd5d6 100644
+--- a/SubMtxList/makefile
++++ b/SubMtxList/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/SubMtxList/src/makefile b/SubMtxList/src/makefile
+index d517704..0fb514d 100644
+--- a/SubMtxList/src/makefile
++++ b/SubMtxList/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/SubMtxManager/doc/intro.tex b/SubMtxManager/doc/intro.tex
+index 7587883..b10c35c 100644
+--- a/SubMtxManager/doc/intro.tex
++++ b/SubMtxManager/doc/intro.tex
+@@ -9,7 +9,7 @@ Its form and functionality is almost identical to that of the
+ % During the forward and backsolves of a linear system $A X = B$,
+ % where the solution $X$ and the right hand side $B$ may be matrices
+ % as opposed to a single vector, the multifrontal approach to solvng
+-% the systems does not make much use of the global $X$ and $B$ data
++% the systems does not mingw32-make much use of the global $X$ and $B$ data
+ % structures.
+ % Rather there are a number of smaller dense matrices, 
+ % e.g., $B_{J,*}$, $B_{\bnd{J},*}$ and $X_{J \cup \bnd{J},*}$,
+diff --git a/SubMtxManager/makefile b/SubMtxManager/makefile
+index 398e457..54fd5d6 100644
+--- a/SubMtxManager/makefile
++++ b/SubMtxManager/makefile
+@@ -2,8 +2,8 @@ all_drivers :
+ 	
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/SubMtxManager/src/makefile b/SubMtxManager/src/makefile
+index 67d41b0..faa80a3 100644
+--- a/SubMtxManager/src/makefile
++++ b/SubMtxManager/src/makefile
+@@ -17,11 +17,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/SymbFac/doc/intro.tex b/SymbFac/doc/intro.tex
+index 4eb52ec..95d2295 100644
+--- a/SymbFac/doc/intro.tex
++++ b/SymbFac/doc/intro.tex
+@@ -36,6 +36,6 @@ contains the vertices.
+ \par
+ {\bf NOTE:} The {\tt SymbFac\_initFromInpMtx()}
+ and {\tt SymbFac\_initFromPencil()} methods have been changed
+-slightly to make them more efficient.
++slightly to mingw32-make them more efficient.
+ The {\tt InpMtx} objects that are input are now required to have
+ chevron coordinate type and storage mode must be by vectors.
+diff --git a/SymbFac/doc/proto.tex b/SymbFac/doc/proto.tex
+index d48f5fd..b99ee48 100644
+--- a/SymbFac/doc/proto.tex
++++ b/SymbFac/doc/proto.tex
+@@ -22,7 +22,7 @@ per front.
+ List {\tt ilist} contains the internal and external vertices
+ for front {\tt ilist}.
+ If the input {\tt graph} is a compressed graph, then the lists of
+-compressed vertices make little sense; they must be converted to
++compressed vertices mingw32-make little sense; they must be converted to
+ original vertices.
+ To do this, see the {\tt IVL\_expand()} method.
+ The {\tt nodwghtsIV} and {\tt bndwghtsIV} objects for the {\tt
+diff --git a/SymbFac/makefile b/SymbFac/makefile
+index d25e70a..1eb6b5f 100644
+--- a/SymbFac/makefile
++++ b/SymbFac/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/SymbFac/src/makefile b/SymbFac/src/makefile
+index 25a093f..d548c06 100644
+--- a/SymbFac/src/makefile
++++ b/SymbFac/src/makefile
+@@ -14,11 +14,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Tree/makefile b/Tree/makefile
+index d25e70a..1eb6b5f 100644
+--- a/Tree/makefile
++++ b/Tree/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Tree/src/makefile b/Tree/src/makefile
+index ee260b7..20717aa 100644
+--- a/Tree/src/makefile
++++ b/Tree/src/makefile
+@@ -27,11 +27,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Utilities/makefile b/Utilities/makefile
+index d25e70a..1eb6b5f 100644
+--- a/Utilities/makefile
++++ b/Utilities/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/Utilities/src/iohb.c b/Utilities/src/iohb.c
+index ac38f7b..90989fb 100644
+--- a/Utilities/src/iohb.c
++++ b/Utilities/src/iohb.c
+@@ -17,7 +17,7 @@ Fri Aug 15 16:29:47 EDT 1997
+  supporting documentation.
+ 
+  Neither the Author nor the Institution (National Institute of Standards
+- and Technology) make any representations about the suitability of this 
++ and Technology) mingw32-make any representations about the suitability of this 
+  software for any purpose. This software is provided "as is" without 
+  expressed or implied warranty.
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+diff --git a/Utilities/src/makefile b/Utilities/src/makefile
+index 62d0c88..5c69c4d 100644
+--- a/Utilities/src/makefile
++++ b/Utilities/src/makefile
+@@ -28,11 +28,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/Utilities/src/newsort.c b/Utilities/src/newsort.c
+index 31d54f7..2870817 100644
+--- a/Utilities/src/newsort.c
++++ b/Utilities/src/newsort.c
+@@ -21,7 +21,7 @@
+ /*--------------------------------------------------------------------*/
+ /*
+    ---------------------------------------
+-   macros to make swapping elements easier
++   macros to mingw32-make swapping elements easier
+    ---------------------------------------
+ */
+ #define I_SWAP(a,b) { \
+diff --git a/ZV/makefile b/ZV/makefile
+index d25e70a..1eb6b5f 100644
+--- a/ZV/makefile
++++ b/ZV/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/ZV/src/makefile b/ZV/src/makefile
+index 9b55b69..e079c99 100644
+--- a/ZV/src/makefile
++++ b/ZV/src/makefile
+@@ -19,11 +19,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/bld.bat b/bld.bat
+index 5594379..b01b03e 100644
+--- a/bld.bat
++++ b/bld.bat
+@@ -89,11 +89,11 @@ set "INCLUDE=C:\Users\hans_\conda\conda-bld\spooles_1543505521024\_h_env\Library
+ set "LIB=C:\Users\hans_\conda\conda-bld\spooles_1543505521024\_h_env\Library\lib;%LIB%"
+ call "C:\Users\hans_\conda\Scripts\activate.bat" "C:\Users\hans_\conda\conda-bld\spooles_1543505521024\_build_env"
+ REM ===== end generated header =====
+-mingw32-make lib
++mingw32-mingw32-make lib
+ if errorlevel 1 exit 1
+ 
+ cd MT\src\
+-mingw32-make
++mingw32-mingw32-make
+ if errorlevel 1 exit 1
+ 
+ mkdir -p %LIBRARY_PREFIX%\lib
+diff --git a/documentation/AllInOne/intro.tex b/documentation/AllInOne/intro.tex
+index 251a99f..6086559 100644
+--- a/documentation/AllInOne/intro.tex
++++ b/documentation/AllInOne/intro.tex
+@@ -73,7 +73,7 @@ using {\bf SPOOLES} 2.2''}.
+ The {\bf SPOOLES} library has been integrated into the CSAR-Nastran
+ finite element package, in the serial, multithreaded and MPI
+ environments.
+-To make the process easier, we wrote ``wrappers'' around the 
++To mingw32-make the process easier, we wrote ``wrappers'' around the 
+ code found in the three driver programs.
+ These wrapper objects insulate the user from much of the
+ complexity of using the package. 
+diff --git a/documentation/FrontTrees/fronttrees.tex b/documentation/FrontTrees/fronttrees.tex
+index a9e31ba..490a36d 100644
+--- a/documentation/FrontTrees/fronttrees.tex
++++ b/documentation/FrontTrees/fronttrees.tex
+@@ -449,7 +449,7 @@ Had we chosen to write BLAS3 kernels for the intra-front
+ computations when pivoting is not enabled, the factorization timings for
+ the first five front trees would have been higher.
+ But splitting fronts into smaller fronts is necessary for parallel
+-computations, so it made sense to make it the recommended route for
++computations, so it made sense to mingw32-make it the recommended route for
+ serial computations as well.
+ There would be very little difference in speed had the intra-front
+ computations been done with BLAS3 kernels compared with using the 
+diff --git a/documentation/FrontTrees/intro.tex b/documentation/FrontTrees/intro.tex
+index 9960941..374504b 100644
+--- a/documentation/FrontTrees/intro.tex
++++ b/documentation/FrontTrees/intro.tex
+@@ -48,7 +48,7 @@ computations is controlled by a ``front tree''.
+ This object is constructed directly by the {\bf SPOOLES} ordering
+ software, or can be created from the graph of the matrix and an
+ outside permutation.
+-Various transformations on the front tree can make a large
++Various transformations on the front tree can mingw32-make a large
+ difference in performance.
+ Some knowledge of the linear system, (e.g., does it come from a 2-D
+ or 3-D problem? is it small or large?), coupled with some knowledge
+diff --git a/documentation/FrontTrees/ordering.tex b/documentation/FrontTrees/ordering.tex
+index 16b20ee..6989aa7 100644
+--- a/documentation/FrontTrees/ordering.tex
++++ b/documentation/FrontTrees/ordering.tex
+@@ -176,7 +176,7 @@ Here are some rules of thumb.
+ If the matrix size is small to moderate in size, say up to 10,000
+ rows and columns, use minimum degree.
+ The extra ordering time for nested dissection or multisection may
+-not make up for any decrease in factor or solve time.
++not mingw32-make up for any decrease in factor or solve time.
+ \item
+ If the matrix size comes from a partial differential equation that
+ has several degrees of freedom at a grid point, use multisection or
+diff --git a/documentation/Install/cleanup.tex b/documentation/Install/cleanup.tex
+index 281be2c..8990e6f 100644
+--- a/documentation/Install/cleanup.tex
++++ b/documentation/Install/cleanup.tex
+@@ -3,13 +3,13 @@
+ \label{section:cleanup}
+ \par
+ Let's say we've just created the {\tt spooles.a} library and then
+-typed {\tt make all\_drivers} when in the {\tt spooles} directory.
++typed {\tt mingw32-make all\_drivers} when in the {\tt spooles} directory.
+ All the executable programs are now on disk, 
+ and taking up a lot of space.
+ To remove all the executable programs, we don't need to go into
+ each object's {\tt driver} program and remove them one by one.
+ We can do this from the top level directory by typing
+-{\tt make clean}.
++{\tt mingw32-make clean}.
+ \par
+ This process visits each of the objects' {\tt src/}, {\tt doc/} and
+ {\tt drivers/} directories one by one.
+@@ -25,7 +25,7 @@ directory.)
+ \par
+ Let's say you've got {\bf SPOOLES} working on one system and you
+ want to move it to another system.
+-Even after cleanup (via the {\tt make clean} call) there may be a
++Even after cleanup (via the {\tt mingw32-make clean} call) there may be a
+ large number of files that don't need to be moved.
+ Or perhaps you'd like to {\tt tar} everything that is necessary without
+ removing your {\tt spooles.a} library and executables that took so
+diff --git a/documentation/Install/drivers.tex b/documentation/Install/drivers.tex
+index b08f5bd..f066eb2 100644
+--- a/documentation/Install/drivers.tex
++++ b/documentation/Install/drivers.tex
+@@ -11,7 +11,7 @@ Once the global {\tt spooles.a} library is built, one can compile,
+ link and load the driver programs.
+ This can be done inside the {\tt drivers/} subdirectory of each
+ individual object, or all the executables for the driver programs 
+-can be created by typing {\tt make all\_drivers} in the top level 
++can be created by typing {\tt mingw32-make all\_drivers} in the top level 
+ directory.
+ \par
+ Let us look at one particular example.
+@@ -23,7 +23,7 @@ matrix-matrix operations that are done to a front.
+ The {\tt Chv/drivers/test\_update.c} program exercises this
+ functionality.
+ To create the {\tt test\_update} executable, type 
+-{\tt make test\_update} while in the {\tt Chv/drivers/}{ directory.
++{\tt mingw32-make test\_update} while in the {\tt Chv/drivers/}{ directory.
+ To execute this program, there is a {\tt do\_update} shell script.
+ Here we can test the accuracy and performance of this particular
+ computation.
+diff --git a/documentation/Install/globalLibs.tex b/documentation/Install/globalLibs.tex
+index 7fd7f79..7ef9276 100644
+--- a/documentation/Install/globalLibs.tex
++++ b/documentation/Install/globalLibs.tex
+@@ -5,7 +5,7 @@ To build the global serial library {\tt spooles.a}, type the
+ following.
+ \begin{verbatim}
+ % cd spooles
+-% make lib
++% mingw32-make lib
+ \end{verbatim}
+ This visits each of the serial objects' {\tt src/} directories,
+ compiles the source code and loads it into the {\tt spooles.a}
+@@ -17,7 +17,7 @@ If your computer system does {\it not} have Perl installed,
+ this option will have the same result.
+ \begin{verbatim}
+ % cd spooles
+-% make global
++% mingw32-make global
+ \end{verbatim}
+ This approach uses hard-coded makefile inside each {\tt src/}
+ directory, and is less reliable than the first way.
+@@ -33,9 +33,9 @@ directory.
+ Now we have two choices --- to build a separate {\tt spoolesMT.a}
+ library, or two merge the multithreaded code into the {\tt
+ spooles.a} library.
+-We recommend the first, via typing {\tt make spoolesMT.a},
+-though the second is perfectly fine by typing {\tt make makeLib}.
+-If Perl is not installed, type {\tt make -f makeGlobalLib} for the
++We recommend the first, via typing {\tt mingw32-make spoolesMT.a},
++though the second is perfectly fine by typing {\tt mingw32-make makeLib}.
++If Perl is not installed, type {\tt mingw32-make -f makeGlobalLib} for the
+ latter behavior.
+ \par
+ Much the same applies to the MPI library.
+@@ -44,15 +44,15 @@ directory.
+ Now we have two choices --- to build a separate {\tt spoolesMPI.a}
+ library, or two merge the MPI code into the {\tt
+ spooles.a} library.
+-We recommend the first, via typing {\tt make spoolesMPI.a},
+-though the second is perfectly fine by typing {\tt make makeLib}.
+-If Perl is not installed, type {\tt make -f makeGlobalLib} for the
++We recommend the first, via typing {\tt mingw32-make spoolesMPI.a},
++though the second is perfectly fine by typing {\tt mingw32-make makeLib}.
++If Perl is not installed, type {\tt mingw32-make -f makeGlobalLib} for the
+ latter behavior.
+ \par
+ Note, in the top level {\tt spooles/makefile} there are two lines
+ commented out under the {\tt lib:} target which will compile the
+ multithreaded and MPI source code into {\tt spooles.a}.
+ If you uncomment these lines, (replace the {\tt \#} with a tab),
+-and type {\tt make lib}, then the multithreaded and MPI source will
++and type {\tt mingw32-make lib}, then the multithreaded and MPI source will
+ be included in {\tt spooles.a}.
+ \par
+diff --git a/documentation/Install/makefile.tex b/documentation/Install/makefile.tex
+index b1bb5d5..f35957c 100644
+--- a/documentation/Install/makefile.tex
++++ b/documentation/Install/makefile.tex
+@@ -40,7 +40,7 @@ a symbol table.
+ % good deal of development was done.)
+ If {\tt ranlib} is not needed (as on most systems), {\tt RANLIB} is
+ set to {\tt echo} to echo out the library name
+-during the {\tt make} process.
++during the {\tt mingw32-make} process.
+ \item
+ The {\tt .c.o} and {\tt .c.a} suffix rules are defined.
+ \item
+diff --git a/documentation/Install/overview.tex b/documentation/Install/overview.tex
+index f44ab68..8b1feca 100644
+--- a/documentation/Install/overview.tex
++++ b/documentation/Install/overview.tex
+@@ -4,7 +4,7 @@
+ The {\bf SPOOLES} library is {\it object-oriented}.
+ Just about everything is an object, data structures and algorithms.
+ The directory structure reflects this design philosophy.
+-First, make a directory (say called {\tt spooles}) 
++First, mingw32-make a directory (say called {\tt spooles}) 
+ and place the tar file {\tt spooles.2.2.tar.gz} in this directory.
+ unzip the file and then extract the files.
+ For example, here are the Unix commands.
+@@ -46,7 +46,7 @@ the {\tt A2} object.
+ {\tt drivers/} --- This subdirectory contains all the driver
+ programs that exercise and validate the behavior of the {\tt A2} object.
+ \end{itemize}
+-Each object's directory contains a header file, a make file, and a
++Each object's directory contains a header file, a mingw32-make file, and a
+ source and document subdirectories.
+ Most but not all contain driver directories.
+ \par
+diff --git a/documentation/Install/source.tex b/documentation/Install/source.tex
+index 7246a0b..82dae42 100644
+--- a/documentation/Install/source.tex
++++ b/documentation/Install/source.tex
+@@ -4,17 +4,17 @@
+ One of the strengths of the {\bf SPOOLES} library is its open design.
+ Objects manage much of the complexity of 140,000 lines of source code.
+ There is a great deal of compartmentalization or encapsulation of
+-data structures that make it relatively easy to replace modules
++data structures that mingw32-make it relatively easy to replace modules
+ or extend the functionality.
+ \par
+-To make a new object, simply copy over the directory structure of a
++To mingw32-make a new object, simply copy over the directory structure of a
+ similar object, and then modify the header, source, documentation
+ and drivers files as necessary.
+ Let us call this new object {\tt NewObj}.
+ When in {\tt NewObj/src},
+-typing {\tt make updateLib} or {\tt make -f makeGlobalLib} will
++typing {\tt mingw32-make updateLib} or {\tt mingw32-make -f makeGlobalLib} will
+ load the new source files into the global {\tt spooles.a} library.
+-Or one can make a local library by typing {\tt make NewObj.a}.
++Or one can mingw32-make a local library by typing {\tt mingw32-make NewObj.a}.
+ In the {\tt NewObj/drivers} directory, modify {\tt makefile} as
+ necessary.
+ If the {\tt NewObj} source code has been loaded into {\tt
+@@ -33,8 +33,8 @@ LIBS = ../src/NewObj.a ../../spooles.a -lm
+ \end{verbatim}
+ so the new source code can be linked.
+ As changes are made to the {\tt NewObj} source files, they need to
+-be recompiled via {\tt make updateLib} (for the global {\tt
+-spooles.a} library) or via {\tt make NewObj.a} (for the local
++be recompiled via {\tt mingw32-make updateLib} (for the global {\tt
++spooles.a} library) or via {\tt mingw32-make NewObj.a} (for the local
+ {\tt NewObj.a} library).
+ \par
+ Any driver programs will have to be re-linked after changes to the
+@@ -57,7 +57,7 @@ There are three choices.
+ \begin{itemize}
+ \item
+ If your system does not have Perl, you must call
+-{\tt make -f makeGlobalLib} inside the {\tt src} directory.
++{\tt mingw32-make -f makeGlobalLib} inside the {\tt src} directory.
+ The {\tt makeGlobalLib} compiles and loads {\it all} source files
+ in the {\tt src} directory, at least that is what it should do.
+ The {\tt makeGlobalLib} file contains a list of source files,
+@@ -76,7 +76,7 @@ If your system does have Perl, you have more flexibility.
+ \begin{itemize}
+ \item
+ To compile all source files into the {\tt spooles.a} library, 
+-type {\tt make makeLib} while in the {\tt spooles} directory. 
++type {\tt mingw32-make makeLib} while in the {\tt spooles} directory. 
+ Execution proceeds in each of the objects' {\tt src/} directories
+ in turn.
+ The Perl script {\tt makeLib}
+@@ -87,7 +87,7 @@ compiles them and loads them into the library.
+ Inside an object's {\tt src/} directory,
+ you can compile the newly modified source files 
+ into the {\tt spooles.a} 
+-library by typing {\tt make updateLib}. 
++library by typing {\tt mingw32-make updateLib}. 
+ The Perl script {\tt updLib}
+ found in the top level {\tt spooles} directory is executed,
+ which scans the {\tt makefile} for {\it all} source code names,
+@@ -101,20 +101,20 @@ in the {\tt FrontMtx/drivers} directory, and we have made some
+ modifications to some source files for the {\tt Chv} and {\tt
+ SubMtx} objects.
+ We change directories to {\tt Chv/src} and type
+-{\tt make updateLib}, and the modified files are compiled and
++{\tt mingw32-make updateLib}, and the modified files are compiled and
+ loaded into {\tt spooles.a}.
+ We then change directories to {\tt SubMtx/src} and type
+-{\tt make updateLib}, but nothing happens, our newly modified files
++{\tt mingw32-make updateLib}, but nothing happens, our newly modified files
+ are not compiled nor loaded into {\tt spooles.a}.
+ The problem is that the {\tt spooles.a} directory was modified when
+ the new {\tt Chv/src} files were compiled and loaded, and so is
+ newer than the modified {\tt SubMtx} files.
+ \par
+ The solution is to modify files in the {\tt Chv/src} directory, 
+-type {\tt make updateLib}, 
++type {\tt mingw32-make updateLib}, 
+ then modify the files in the {\tt SubMtx/src} directory, 
+-again type {\tt make updateLib}, 
+-and then type {\tt make testgrid} in the {\tt FrontMtx/drivers}
++again type {\tt mingw32-make updateLib}, 
++and then type {\tt mingw32-make testgrid} in the {\tt FrontMtx/drivers}
+ directory.
+ \end{itemize}
+ \end{itemize}
+diff --git a/documentation/ReferenceManual/algorithmDesign.tex b/documentation/ReferenceManual/algorithmDesign.tex
+index 3adc7c2..e8a1860 100644
+--- a/documentation/ReferenceManual/algorithmDesign.tex
++++ b/documentation/ReferenceManual/algorithmDesign.tex
+@@ -682,7 +682,7 @@ but the notification is made.
+ \noindent {\bf Parallel solve }
+ \par \bigskip \par
+ Let us now consider the forward and backsolves.
+-We make one assumption: the data partition of the factors $L$, $D$
++We mingw32-make one assumption: the data partition of the factors $L$, $D$
+ and $U$ will be maintained during the solve.
+ In other words, the entries in $L$, $D$ and $U$
+ are found in basic submatrices,
+diff --git a/documentation/ReferenceManual/main.log b/documentation/ReferenceManual/main.log
+index 6eb3dd8..3180c5b 100644
+--- a/documentation/ReferenceManual/main.log
++++ b/documentation/ReferenceManual/main.log
+@@ -982,7 +982,7 @@ Chapter 43.
+ ) (../../MPI/doc/dataStructure.tex
+ Overfull \hbox (0.87425pt too wide) in paragraph at lines 30--34
+ []\OT1/cmr/m/n/10 The \OT1/cmtt/m/n/10 MatMulInfo \OT1/cmr/m/n/10 ob-ject store
+-s all the nec-es-sary in-for-ma-tion to make this hap-pen. There is one \OT1/cm
++s all the nec-es-sary in-for-ma-tion to mingw32-make this hap-pen. There is one \OT1/cm
+ tt/m/n/10 MatMulInfo
+  []
+ 
+diff --git a/documentation/ReferenceManual/quickstart.tex b/documentation/ReferenceManual/quickstart.tex
+index 83bfc45..cd2d7db 100644
+--- a/documentation/ReferenceManual/quickstart.tex
++++ b/documentation/ReferenceManual/quickstart.tex
+@@ -57,7 +57,7 @@ the
+ {\tt Ideq} and
+ {\tt Tree} objects.
+ The {\tt DInpMtx} and {\tt ETree} objects are the most important.
+-The {\tt DInpMtx} object is used to assemble, store and make
++The {\tt DInpMtx} object is used to assemble, store and mingw32-make
+ available to the factorization object the entries in the original
+ matrix.
+ The {\tt ETree} object stores the {\it front tree}, which is
+diff --git a/documentation/makefile b/documentation/makefile
+index 240522a..f963f91 100644
+--- a/documentation/makefile
++++ b/documentation/makefile
+@@ -1,6 +1,6 @@
+ clean :
+-	cd AllInOne        ; make clean ;
+-	cd FrontTrees      ; make clean ;
+-	cd Install         ; make clean ;
+-	cd PP99            ; make clean ;
+-	cd ReferenceManual ; make clean ;
++	cd AllInOne        ; mingw32-make clean ;
++	cd FrontTrees      ; mingw32-make clean ;
++	cd Install         ; mingw32-make clean ;
++	cd PP99            ; mingw32-make clean ;
++	cd ReferenceManual ; mingw32-make clean ;
+diff --git a/makeLib b/makeLib
+index 1780f39..26f4a48 100644
+--- a/makeLib
++++ b/makeLib
+@@ -9,18 +9,18 @@
+ # methods for only one object, e.g., A2/src/A2.a) 
+ #
+ # the spooles.a library is usually created once, by executing
+-# "make global" in the spooles directory, which compiles each
++# "mingw32-make global" in the spooles directory, which compiles each
+ # and every source file in all the object/src directories.
+ # (not quite true, just every src file that is found in 
+ # object/src/makefile, which is considered as gospel.)
+-# the "make global" command goes into each object's src directory,
++# the "mingw32-make global" command goes into each object's src directory,
+ # calls this perl script to create a makefile that will compile
+ # each src file and load into the spooles.a library, and then
+ # executes that makefile and removes it.
+ #
+ # for those systems that do not have perl installed, we have a
+ # makeGlobalLib makefile in each object's src directory.
+-# typing "make Global" in the spooles directory will use
++# typing "mingw32-make Global" in the spooles directory will use
+ # this makefile. unfortunately, each object's /src/makefile
+ # and /src/makeGlobalLib are separate and must be kept up to date
+ # manually. (i.e., add another src file to /src/makefile and you
+diff --git a/makefile b/makefile
+index f014c7d..8918a23 100644
+--- a/makefile
++++ b/makefile
+@@ -1,169 +1,169 @@
+ drivers :
+-	cd A2               ; make all_drivers
+-	cd BKL              ; make all_drivers
+-	cd BPG              ; make all_drivers
+-	cd Chv              ; make all_drivers
+-	cd ChvList          ; make all_drivers
+-	cd ChvManager       ; make all_drivers
+-	cd Coords           ; make all_drivers
+-	cd DSTree           ; make all_drivers
+-	cd DV               ; make all_drivers
+-	cd DenseMtx         ; make all_drivers
+-	cd Drand            ; make all_drivers
+-	cd EGraph           ; make all_drivers
+-	cd ETree            ; make all_drivers
+-	cd FrontMtx         ; make all_drivers
+-	cd GPart            ; make all_drivers
+-	cd Graph            ; make all_drivers
+-	cd I2Ohash          ; make all_drivers
+-	cd IIheap           ; make all_drivers
+-	cd IV               ; make all_drivers
+-	cd IVL              ; make all_drivers
+-	cd Ideq             ; make all_drivers
+-	cd InpMtx           ; make all_drivers
+-	cd Lock             ; make all_drivers
+-	cd MPI              ; make all_drivers
+-	cd MSMD             ; make all_drivers
+-	cd MT               ; make all_drivers
+-	cd Network          ; make all_drivers
+-	cd PatchAndGoInfo   ; make all_drivers
+-	cd Pencil           ; make all_drivers
+-	cd Perm             ; make all_drivers
+-	cd SemiImplMtx      ; make all_drivers
+-	cd SolveMap         ; make all_drivers
+-	cd SubMtx           ; make all_drivers
+-	cd SubMtxList       ; make all_drivers
+-	cd SubMtxManager    ; make all_drivers
+-	cd SymbFac          ; make all_drivers
+-	cd Tree             ; make all_drivers
+-	cd Utilities        ; make all_drivers
+-	cd ZV               ; make all_drivers
+-	cd misc             ; make all_drivers
++	cd A2               ; mingw32-make all_drivers
++	cd BKL              ; mingw32-make all_drivers
++	cd BPG              ; mingw32-make all_drivers
++	cd Chv              ; mingw32-make all_drivers
++	cd ChvList          ; mingw32-make all_drivers
++	cd ChvManager       ; mingw32-make all_drivers
++	cd Coords           ; mingw32-make all_drivers
++	cd DSTree           ; mingw32-make all_drivers
++	cd DV               ; mingw32-make all_drivers
++	cd DenseMtx         ; mingw32-make all_drivers
++	cd Drand            ; mingw32-make all_drivers
++	cd EGraph           ; mingw32-make all_drivers
++	cd ETree            ; mingw32-make all_drivers
++	cd FrontMtx         ; mingw32-make all_drivers
++	cd GPart            ; mingw32-make all_drivers
++	cd Graph            ; mingw32-make all_drivers
++	cd I2Ohash          ; mingw32-make all_drivers
++	cd IIheap           ; mingw32-make all_drivers
++	cd IV               ; mingw32-make all_drivers
++	cd IVL              ; mingw32-make all_drivers
++	cd Ideq             ; mingw32-make all_drivers
++	cd InpMtx           ; mingw32-make all_drivers
++	cd Lock             ; mingw32-make all_drivers
++	cd MPI              ; mingw32-make all_drivers
++	cd MSMD             ; mingw32-make all_drivers
++	cd MT               ; mingw32-make all_drivers
++	cd Network          ; mingw32-make all_drivers
++	cd PatchAndGoInfo   ; mingw32-make all_drivers
++	cd Pencil           ; mingw32-make all_drivers
++	cd Perm             ; mingw32-make all_drivers
++	cd SemiImplMtx      ; mingw32-make all_drivers
++	cd SolveMap         ; mingw32-make all_drivers
++	cd SubMtx           ; mingw32-make all_drivers
++	cd SubMtxList       ; mingw32-make all_drivers
++	cd SubMtxManager    ; mingw32-make all_drivers
++	cd SymbFac          ; mingw32-make all_drivers
++	cd Tree             ; mingw32-make all_drivers
++	cd Utilities        ; mingw32-make all_drivers
++	cd ZV               ; mingw32-make all_drivers
++	cd misc             ; mingw32-make all_drivers
+ 
+ clean :
+-	cd A2               ; make clean
+-	cd BKL              ; make clean
+-	cd BPG              ; make clean
+-	cd Chv              ; make clean
+-	cd ChvList          ; make clean
+-	cd ChvManager       ; make clean
+-	cd Coords           ; make clean
+-	cd DSTree           ; make clean
+-	cd DV               ; make clean
+-	cd DenseMtx         ; make clean
+-	cd Drand            ; make clean
+-	cd EGraph           ; make clean
+-	cd ETree            ; make clean
+-	cd FrontMtx         ; make clean
+-	cd GPart            ; make clean
+-	cd Graph            ; make clean
+-	cd I2Ohash          ; make clean
+-	cd IIheap           ; make clean
+-	cd IV               ; make clean
+-	cd IVL              ; make clean
+-	cd Ideq             ; make clean
+-	cd InpMtx           ; make clean
+-	cd Lock             ; make clean
+-	cd MPI              ; make clean
+-	cd MSMD             ; make clean
+-	cd MT               ; make clean
+-	cd Network          ; make clean
+-	cd PatchAndGoInfo   ; make clean
+-	cd Pencil           ; make clean
+-	cd Perm             ; make clean
+-	cd SemiImplMtx      ; make clean
+-	cd SolveMap         ; make clean
+-	cd SubMtx           ; make clean
+-	cd SubMtxList       ; make clean
+-	cd SubMtxManager    ; make clean
+-	cd SymbFac          ; make clean
+-	cd Tree             ; make clean
+-	cd Utilities        ; make clean
+-	cd ZV               ; make clean
+-	cd misc             ; make clean
+-	cd documentation    ; make clean
++	cd A2               ; mingw32-make clean
++	cd BKL              ; mingw32-make clean
++	cd BPG              ; mingw32-make clean
++	cd Chv              ; mingw32-make clean
++	cd ChvList          ; mingw32-make clean
++	cd ChvManager       ; mingw32-make clean
++	cd Coords           ; mingw32-make clean
++	cd DSTree           ; mingw32-make clean
++	cd DV               ; mingw32-make clean
++	cd DenseMtx         ; mingw32-make clean
++	cd Drand            ; mingw32-make clean
++	cd EGraph           ; mingw32-make clean
++	cd ETree            ; mingw32-make clean
++	cd FrontMtx         ; mingw32-make clean
++	cd GPart            ; mingw32-make clean
++	cd Graph            ; mingw32-make clean
++	cd I2Ohash          ; mingw32-make clean
++	cd IIheap           ; mingw32-make clean
++	cd IV               ; mingw32-make clean
++	cd IVL              ; mingw32-make clean
++	cd Ideq             ; mingw32-make clean
++	cd InpMtx           ; mingw32-make clean
++	cd Lock             ; mingw32-make clean
++	cd MPI              ; mingw32-make clean
++	cd MSMD             ; mingw32-make clean
++	cd MT               ; mingw32-make clean
++	cd Network          ; mingw32-make clean
++	cd PatchAndGoInfo   ; mingw32-make clean
++	cd Pencil           ; mingw32-make clean
++	cd Perm             ; mingw32-make clean
++	cd SemiImplMtx      ; mingw32-make clean
++	cd SolveMap         ; mingw32-make clean
++	cd SubMtx           ; mingw32-make clean
++	cd SubMtxList       ; mingw32-make clean
++	cd SubMtxManager    ; mingw32-make clean
++	cd SymbFac          ; mingw32-make clean
++	cd Tree             ; mingw32-make clean
++	cd Utilities        ; mingw32-make clean
++	cd ZV               ; mingw32-make clean
++	cd misc             ; mingw32-make clean
++	cd documentation    ; mingw32-make clean
+ 	- rm -f *.o *.a
+ 
+ lib :
+-	cd A2               ; make lib
+-	cd BKL              ; make lib
+-	cd BPG              ; make lib
+-	cd Chv              ; make lib
+-	cd ChvList          ; make lib
+-	cd ChvManager       ; make lib
+-	cd Coords           ; make lib
+-	cd DSTree           ; make lib
+-	cd DV               ; make lib
+-	cd DenseMtx         ; make lib
+-	cd Drand            ; make lib
+-	cd EGraph           ; make lib
+-	cd ETree            ; make lib
+-	cd FrontMtx         ; make lib
+-	cd GPart            ; make lib
+-	cd Graph            ; make lib
+-	cd I2Ohash          ; make lib
+-	cd IIheap           ; make lib
+-	cd IV               ; make lib
+-	cd IVL              ; make lib
+-	cd Ideq             ; make lib
+-	cd InpMtx           ; make lib
+-	cd Lock             ; make lib
+-	cd MSMD             ; make lib
+-	cd Network          ; make lib
+-	cd PatchAndGoInfo   ; make lib
+-	cd Pencil           ; make lib
+-	cd Perm             ; make lib
+-	cd SemiImplMtx      ; make lib
+-	cd SolveMap         ; make lib
+-	cd SubMtx           ; make lib
+-	cd SubMtxList       ; make lib
+-	cd SubMtxManager    ; make lib
+-	cd SymbFac          ; make lib
+-	cd Tree             ; make lib
+-	cd Utilities        ; make lib
+-	cd ZV               ; make lib
+-	cd misc             ; make lib
+-#cd MPI              ; make lib
+-#cd MT               ; make lib
++	cd A2               ; mingw32-make lib
++	cd BKL              ; mingw32-make lib
++	cd BPG              ; mingw32-make lib
++	cd Chv              ; mingw32-make lib
++	cd ChvList          ; mingw32-make lib
++	cd ChvManager       ; mingw32-make lib
++	cd Coords           ; mingw32-make lib
++	cd DSTree           ; mingw32-make lib
++	cd DV               ; mingw32-make lib
++	cd DenseMtx         ; mingw32-make lib
++	cd Drand            ; mingw32-make lib
++	cd EGraph           ; mingw32-make lib
++	cd ETree            ; mingw32-make lib
++	cd FrontMtx         ; mingw32-make lib
++	cd GPart            ; mingw32-make lib
++	cd Graph            ; mingw32-make lib
++	cd I2Ohash          ; mingw32-make lib
++	cd IIheap           ; mingw32-make lib
++	cd IV               ; mingw32-make lib
++	cd IVL              ; mingw32-make lib
++	cd Ideq             ; mingw32-make lib
++	cd InpMtx           ; mingw32-make lib
++	cd Lock             ; mingw32-make lib
++	cd MSMD             ; mingw32-make lib
++	cd Network          ; mingw32-make lib
++	cd PatchAndGoInfo   ; mingw32-make lib
++	cd Pencil           ; mingw32-make lib
++	cd Perm             ; mingw32-make lib
++	cd SemiImplMtx      ; mingw32-make lib
++	cd SolveMap         ; mingw32-make lib
++	cd SubMtx           ; mingw32-make lib
++	cd SubMtxList       ; mingw32-make lib
++	cd SubMtxManager    ; mingw32-make lib
++	cd SymbFac          ; mingw32-make lib
++	cd Tree             ; mingw32-make lib
++	cd Utilities        ; mingw32-make lib
++	cd ZV               ; mingw32-make lib
++	cd misc             ; mingw32-make lib
++#cd MPI              ; mingw32-make lib
++#cd MT               ; mingw32-make lib
+ 
+ global :
+-	cd A2/src             ; make -f makeGlobalLib
+-	cd BKL/src            ; make -f makeGlobalLib
+-	cd BPG/src            ; make -f makeGlobalLib
+-	cd Chv/src            ; make -f makeGlobalLib
+-	cd ChvList/src        ; make -f makeGlobalLib
+-	cd ChvManager/src     ; make -f makeGlobalLib
+-	cd Coords/src         ; make -f makeGlobalLib
+-	cd DSTree/src         ; make -f makeGlobalLib
+-	cd DV/src             ; make -f makeGlobalLib
+-	cd DenseMtx/src       ; make -f makeGlobalLib
+-	cd Drand/src          ; make -f makeGlobalLib
+-	cd EGraph/src         ; make -f makeGlobalLib
+-	cd ETree/src          ; make -f makeGlobalLib
+-	cd FrontMtx/src       ; make -f makeGlobalLib
+-	cd GPart/src          ; make -f makeGlobalLib
+-	cd Graph/src          ; make -f makeGlobalLib
+-	cd I2Ohash/src        ; make -f makeGlobalLib
+-	cd IIheap/src         ; make -f makeGlobalLib
+-	cd IV/src             ; make -f makeGlobalLib
+-	cd IVL/src            ; make -f makeGlobalLib
+-	cd Ideq/src           ; make -f makeGlobalLib
+-	cd InpMtx/src         ; make -f makeGlobalLib
+-	cd Lock/src           ; make -f makeGlobalLib
+-	cd MSMD/src           ; make -f makeGlobalLib
+-	cd Network/src        ; make -f makeGlobalLib
+-	cd PatchAndGoInfo/src ; make -f makeGlobalLib
+-	cd Pencil/src         ; make -f makeGlobalLib
+-	cd Perm/src           ; make -f makeGlobalLib
+-	cd SemiImplMtx/src    ; make -f makeGlobalLib
+-	cd SolveMap/src       ; make -f makeGlobalLib
+-	cd SubMtx/src         ; make -f makeGlobalLib
+-	cd SubMtxList/src     ; make -f makeGlobalLib
+-	cd SubMtxManager/src  ; make -f makeGlobalLib
+-	cd SymbFac/src        ; make -f makeGlobalLib
+-	cd Tree/src           ; make -f makeGlobalLib
+-	cd Utilities/src      ; make -f makeGlobalLib
+-	cd ZV/src             ; make -f makeGlobalLib
+-	cd misc/src           ; make -f makeGlobalLib
+-#cd MPI/src            ; make -f makeGlobalLib
+-#cd MT/src             ; make -f makeGlobalLib
++	cd A2/src             ; mingw32-make -f makeGlobalLib
++	cd BKL/src            ; mingw32-make -f makeGlobalLib
++	cd BPG/src            ; mingw32-make -f makeGlobalLib
++	cd Chv/src            ; mingw32-make -f makeGlobalLib
++	cd ChvList/src        ; mingw32-make -f makeGlobalLib
++	cd ChvManager/src     ; mingw32-make -f makeGlobalLib
++	cd Coords/src         ; mingw32-make -f makeGlobalLib
++	cd DSTree/src         ; mingw32-make -f makeGlobalLib
++	cd DV/src             ; mingw32-make -f makeGlobalLib
++	cd DenseMtx/src       ; mingw32-make -f makeGlobalLib
++	cd Drand/src          ; mingw32-make -f makeGlobalLib
++	cd EGraph/src         ; mingw32-make -f makeGlobalLib
++	cd ETree/src          ; mingw32-make -f makeGlobalLib
++	cd FrontMtx/src       ; mingw32-make -f makeGlobalLib
++	cd GPart/src          ; mingw32-make -f makeGlobalLib
++	cd Graph/src          ; mingw32-make -f makeGlobalLib
++	cd I2Ohash/src        ; mingw32-make -f makeGlobalLib
++	cd IIheap/src         ; mingw32-make -f makeGlobalLib
++	cd IV/src             ; mingw32-make -f makeGlobalLib
++	cd IVL/src            ; mingw32-make -f makeGlobalLib
++	cd Ideq/src           ; mingw32-make -f makeGlobalLib
++	cd InpMtx/src         ; mingw32-make -f makeGlobalLib
++	cd Lock/src           ; mingw32-make -f makeGlobalLib
++	cd MSMD/src           ; mingw32-make -f makeGlobalLib
++	cd Network/src        ; mingw32-make -f makeGlobalLib
++	cd PatchAndGoInfo/src ; mingw32-make -f makeGlobalLib
++	cd Pencil/src         ; mingw32-make -f makeGlobalLib
++	cd Perm/src           ; mingw32-make -f makeGlobalLib
++	cd SemiImplMtx/src    ; mingw32-make -f makeGlobalLib
++	cd SolveMap/src       ; mingw32-make -f makeGlobalLib
++	cd SubMtx/src         ; mingw32-make -f makeGlobalLib
++	cd SubMtxList/src     ; mingw32-make -f makeGlobalLib
++	cd SubMtxManager/src  ; mingw32-make -f makeGlobalLib
++	cd SymbFac/src        ; mingw32-make -f makeGlobalLib
++	cd Tree/src           ; mingw32-make -f makeGlobalLib
++	cd Utilities/src      ; mingw32-make -f makeGlobalLib
++	cd ZV/src             ; mingw32-make -f makeGlobalLib
++	cd misc/src           ; mingw32-make -f makeGlobalLib
++#cd MPI/src            ; mingw32-make -f makeGlobalLib
++#cd MT/src             ; mingw32-make -f makeGlobalLib
+diff --git a/misc/makefile b/misc/makefile
+index d25e70a..1eb6b5f 100644
+--- a/misc/makefile
++++ b/misc/makefile
+@@ -1,10 +1,10 @@
+ all_drivers :
+-	cd drivers ; make drivers
++	cd drivers ; mingw32-make drivers
+ 
+ lib :
+-	cd src ; make makeLib
++	cd src ; mingw32-make makeLib
+ 
+ clean :
+-	cd src ; make clean
+-	cd drivers ; make clean
+-	cd doc ; make clean
++	cd src ; mingw32-make clean
++	cd drivers ; mingw32-make clean
++	cd doc ; mingw32-make clean
+diff --git a/misc/src/makefile b/misc/src/makefile
+index b885fbe..a90910e 100644
+--- a/misc/src/makefile
++++ b/misc/src/makefile
+@@ -24,11 +24,11 @@ clean :
+ 
+ makeLib :
+ 	perl ../../makeLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+ updateLib :
+ 	perl ../../updLib > makeG
+-	make -f makeG
++	mingw32-make -f makeG
+ 	rm -f makeG
+ 
+diff --git a/misc/src/mkNDlinsys.c b/misc/src/mkNDlinsys.c
+index 512f4bc..6418455 100644
+--- a/misc/src/mkNDlinsys.c
++++ b/misc/src/mkNDlinsys.c
+@@ -109,7 +109,7 @@ if ( msglvl > 3 ) {
+ }
+ /*
+    ---------------------------------------------
+-   make the nested dissection permutation vector
++   mingw32-make the nested dissection permutation vector
+    ---------------------------------------------
+ */
+ MARKTIME(t1) ;
+@@ -120,7 +120,7 @@ for ( ii = 0 ; ii < neqns ; ii++ ) {
+    oldToNew[newToOld[ii]] = ii ;
+ }
+ MARKTIME(t2) ;
+-fprintf(msgFile, "\n CPU %8.3f : make the nested dissection ordering",
++fprintf(msgFile, "\n CPU %8.3f : mingw32-make the nested dissection ordering",
+         t2 - t1) ;
+ if ( msglvl > 3 ) {
+    fprintf(msgFile, "\n\n oldToNew") ;
+diff --git a/misc/src/mkNDlinsysQR.c b/misc/src/mkNDlinsysQR.c
+index a7d7263..20d0d26 100644
+--- a/misc/src/mkNDlinsysQR.c
++++ b/misc/src/mkNDlinsysQR.c
+@@ -114,7 +114,7 @@ if ( msglvl > 3 ) {
+ }
+ /*
+    ---------------------------------------------
+-   make the nested dissection permutation vector
++   mingw32-make the nested dissection permutation vector
+    ---------------------------------------------
+ */
+ MARKTIME(t1) ;
+@@ -125,7 +125,7 @@ for ( ii = 0 ; ii < neqns ; ii++ ) {
+    oldToNew[newToOld[ii]] = ii ;
+ }
+ MARKTIME(t2) ;
+-fprintf(msgFile, "\n CPU %8.3f : make the nested dissection ordering",
++fprintf(msgFile, "\n CPU %8.3f : mingw32-make the nested dissection ordering",
+         t2 - t1) ;
+ if ( msglvl > 3 ) {
+    fprintf(msgFile, "\n\n oldToNew") ;
+diff --git a/misc/src/orderViaBestOfNDandMS.c b/misc/src/orderViaBestOfNDandMS.c
+index e044857..dce76cd 100644
+--- a/misc/src/orderViaBestOfNDandMS.c
++++ b/misc/src/orderViaBestOfNDandMS.c
+@@ -337,7 +337,7 @@ if ( msglvl >= 1 ) {
+    if ( totalCPU > 0.0 ) {
+       fprintf(msgFile, 
+               "\n\n CPU breakdown                            CPU %%"
+-              "\n    make equivalence map             %8.3f %6.2f"
++              "\n    mingw32-make equivalence map             %8.3f %6.2f"
+               "\n    compress graph                   %8.3f %6.2f"
+               "\n    construct domain/separator tree  %8.3f %6.2f"
+               "\n    evaluate nested dissection       %8.3f %6.2f"
+diff --git a/updLib b/updLib
+index 9f11ffa..55429df 100644
+--- a/updLib
++++ b/updLib
+@@ -9,12 +9,12 @@
+ # methods for only one object, e.g., A2/src/A2.a) 
+ #
+ # the spooles.a library is usually created once, by executing
+-# "make global" in the spooles directory, which compiles each
++# "mingw32-make global" in the spooles directory, which compiles each
+ # and every source file in all the object/src directories.
+ # on many systems this can take quite a long time.
+ #
+-# there are times when we make a change to one method and want to
+-# update the spooles.a library. calling "make global" in the
++# there are times when we mingw32-make a change to one method and want to
++# update the spooles.a library. calling "mingw32-make global" in the
+ # spooles directory would compile all the source once again.
+ #
+ # what is needed is a way to compile only those src files that
+@@ -22,13 +22,13 @@
+ # what this perl script helps do is to create a makefile (written
+ # to stdout) that will compile all src files that are more recent 
+ # than spooles.a library. this perl script is called when
+-# executing "make updateLib" within the object's src directory.
++# executing "mingw32-make updateLib" within the object's src directory.
+ #
+ # this works well in some cases. for example, let us say that we
+ # are working in the FrontMtx/drivers directory and we see that 
+ # the A2/src/QRreduce.c file needs a change. we open another window,
+-# move to the A2/src directory, and make the change in QRreduce.c.
+-# we then execute "make updateLib", which first calls this
++# move to the A2/src directory, and mingw32-make the change in QRreduce.c.
++# we then execute "mingw32-make updateLib", which first calls this
+ # script to generate a makefile that will compile QRreduce.c
+ # and load into spooles.a. the makefile is then executed to perform
+ # that operation, and then removed. we have a good incremental
+@@ -41,9 +41,9 @@
+ # we edit the two source files and then need to update the spooles.a 
+ # library.
+ #
+-# we first go to the A2/src directory and execute "make updateLib"
++# we first go to the A2/src directory and execute "mingw32-make updateLib"
+ # then the QRreduce.c file gets compiled and loaded into spooles.a. 
+-# we then go to the SubMtx/src directory and execute "make updateLib" 
++# we then go to the SubMtx/src directory and execute "mingw32-make updateLib" 
+ # and the util.c file # is NOT compiled and loaded into the library. 
+ # this is because spooles.a is more recent the SubMtx/src/util.c, 
+ # because spooles.a was just modified when A2/src/QRreduce.c was 
+@@ -51,8 +51,8 @@
+ #
+ # i presently don't know of a clean solution to this problem
+ # (and am open to suggestions). a decent workaround is this.
+-# (1) go to A2/src, modify QRreduce.c, then "make updateLib"
+-# (2) go to SubMtx/src, modify util.c, then "make updateLib"
++# (1) go to A2/src, modify QRreduce.c, then "mingw32-make updateLib"
++# (2) go to SubMtx/src, modify util.c, then "mingw32-make updateLib"
+ # here the util.c file is more recent than spooles.a. in other words,
+ # update the library after each src file is changed.
+ #
