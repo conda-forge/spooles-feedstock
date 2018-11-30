@@ -6,15 +6,15 @@ cd MT\src\
 mingw32-make
 if errorlevel 1 exit 1
 
-mkdir -p %LIBRARY_PREFIX%\lib
-cp *.a %LIBRARY_PREFIX%\lib\
+mkdir -p %LIBRARY_PREFIX%\mingw-w64\lib
+cp *.a %LIBRARY_PREFIX%\mingw-w64\lib\
 if errorlevel 1 exit 1
 
 cd ..\..
-cp *.a %LIBRARY_PREFIX%\lib\
+cp *.a %LIBRARY_PREFIX%\mingw-w64\lib\
 if errorlevel 1 exit 1
 
-mkdir %LIBRARY_PREFIX%\include\spooles
+mkdir %LIBRARY_PREFIX%\mingw-w64\include\spooles
 if errorlevel 1 exit 1
 
-xcopy /s .\*.h %LIBRARY_PREFIX%\include\spooles
+xcopy /s .\*.h %LIBRARY_PREFIX%\mingw-w64\include\spooles
