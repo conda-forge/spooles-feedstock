@@ -1,8 +1,8 @@
-make lib
+make lib CC=%CC% AR=%AR%
 if errorlevel 1 exit 1
 
 cd MT\src\
-make
+make CC=%CC% AR=%AR%
 if errorlevel 1 exit 1
 
 mkdir -p %LIBRARY_LIB%
