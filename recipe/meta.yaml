@@ -13,9 +13,16 @@ source:
     - patches/gcc.patch  # [unix]
     - patches/win.patch  # [win]
     - patches/osx.patch
+    # Data races in the multithreaded factor and solve.  See the patch
+    # headers; without these spoolesMT.a returns silently wrong results.
+    - patches/0001-MT-add-acquire-release-primitives-and-order-the-work.patch
+    - patches/0002-MT-order-the-frontIsDone-p_mtx-publication-in-the-so.patch
+    - patches/0003-MT-make-the-solve-s-three-inter-phase-barriers-actua.patch
+    - patches/0004-MT-stop-losing-updates-on-the-factor-s-entry-counter.patch
+    - patches/0005-MT-give-each-solve-thread-its-own-cpus-vector.patch
 
 build:
-  number: 1005
+  number: 1006
 
 requirements:
   build:
