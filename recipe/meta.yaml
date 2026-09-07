@@ -20,6 +20,9 @@ source:
     - patches/0003-MT-make-the-solve-s-three-inter-phase-barriers-actua.patch
     - patches/0004-MT-stop-losing-updates-on-the-factor-s-entry-counter.patch
     - patches/0005-MT-give-each-solve-thread-its-own-cpus-vector.patch
+    # int overflow in the I2Ohash bucket index; Debian and FreeBSD carry
+    # the same fix.
+    - patches/0006-I2Ohash-fix-int-overflow-in-the-bucket-index.patch
 
 build:
   number: 1006
