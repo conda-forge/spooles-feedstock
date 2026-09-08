@@ -37,8 +37,42 @@ requirements:
     - make
 
 test:
+  requires:
+    # Only where the test can actually run: the compiler package is built for
+    # the *host*, so on a cross-compiled target it is an executable the build
+    # machine cannot run ("Bad CPU type in executable").  conda-build does not
+    # skip the test phase when cross-compiling -- it runs the commands anyway.
+    - {{ compiler('c') }}  # [unix and build_platform == target_platform]
+  files:
+    - test_solve.c
   commands:
+    - test -f ${PREFIX}/lib/spooles.a    # [unix]
     - test -f ${PREFIX}/lib/spoolesMT.a  # [unix]
+    - if not exist %LIBRARY_LIB%\spooles.a exit 1    # [win]
+    - if not exist %LIBRARY_LIB%\spoolesMT.a exit 1  # [win]
+    # The MT race patches are only detectable at runtime probabilistically
+    # (see test_solve.c), so guard them deterministically as well: this
+    # header exists only if the MT patch series applied.  Catches the
+    # realistic regression -- a rerender or version bump silently dropping
+    # the patches -- with certainty and at no cost, on every platform
+    # including the cross-compiled and Windows ones.
+    - test -f ${PREFIX}/include/spooles/Utilities/SPOOLESatomic.h  # [unix]
+    - if not exist %LIBRARY_INC%\spooles\Utilities\SPOOLESatomic.h exit 1  # [win]
+    # Actually solve a system and check the answer, serially and threaded.
+    # SPOOLES 2.2's MT layer had data races that returned silently wrong
+    # results -- no crash, no diagnostic -- which a "does the .a exist" check
+    # cannot see, and neither can SPOOLES' own drivers: they print an error
+    # metric and exit 0 whatever its value.  See the header of test_solve.c
+    # for the measured failure rates behind the iteration count.
+    - $CC $CFLAGS -o test_solve test_solve.c -I $PREFIX/include/spooles $PREFIX/lib/spoolesMT.a $PREFIX/lib/spooles.a $LDFLAGS -lpthread -lm  # [unix and build_platform == target_platform]
+    # 500 iterations at 8 threads: ~97% chance of catching an unpatched
+    # library on x86_64, for ~26 min on a 3-core runner against a 360 min
+    # timeout.  8 threads is the measured optimum -- detection falls off
+    # again by 16, where oversubscription serializes the interleavings it is
+    # meant to provoke.  The trailing argument is a wall-clock safety cap,
+    # not a tuning knob: it exists so a pathologically slow runner bails
+    # rather than burning the whole timeout.
+    - ./test_solve 500 8 20 2700  # [unix and build_platform == target_platform]
 
 about:
   home: http://www.netlib.org/linalg/spooles/spooles.2.2.html
